@@ -66,6 +66,8 @@ document.querySelectorAll("section, .card, .industry-card, .about-card")
     el.classList.add("hidden");
 
     observer.observe(el);
+    el.style.transitionProperty = "opacity, transform";
+
 
 });
 
