@@ -297,15 +297,21 @@ section{
 
 .card{
 
-    background:#111827;
+position:relative;
 
-    border:1px solid rgba(255,255,255,.08);
+overflow:hidden;
 
-    border-radius:18px;
+background:#111827;
 
-    padding:35px;
+border:1px solid rgba(255,255,255,.08);
 
-    transition:.35s;
+border-radius:22px;
+
+padding:35px;
+
+transition:.45s ease;
+
+cursor:pointer;
 
 }
 
