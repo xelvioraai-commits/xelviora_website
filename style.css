@@ -741,3 +741,34 @@ transform:translateY(0);
 }
 
 }
+/* ==========================================
+   Scroll Indicator
+========================================== */
+
+.scroll-indicator{
+
+font-size:42px;
+
+color:#38BDF8;
+
+margin-top:80px;
+
+animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(15px);
+
+}
+
+}
