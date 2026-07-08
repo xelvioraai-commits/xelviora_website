@@ -522,5 +522,63 @@ font-size:38px;
 font-size:42px;
 
 }
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+.hidden{
+
+opacity:0;
+transform:translateY(50px);
+transition:all .8s ease;
+
+}
+
+.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+.primary-btn{
+
+position:relative;
+overflow:hidden;
+
+}
+
+.ripple{
+
+position:absolute;
+width:20px;
+height:20px;
+background:rgba(255,255,255,.5);
+border-radius:50%;
+transform:translate(-50%,-50%);
+animation:ripple .6s linear;
+pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+from{
+
+width:0;
+height:0;
+opacity:.8;
+
+}
+
+to{
+
+width:500px;
+height:500px;
+opacity:0;
+
+}
+
+}
 
 }
