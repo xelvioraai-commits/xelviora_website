@@ -317,11 +317,13 @@ cursor:pointer;
 
 .card:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-15px) scale(1.02);
 
-    border-color:#2563EB;
+    border-color:#38BDF8;
 
-    box-shadow:0 25px 45px rgba(37,99,235,.25);
+    box-shadow:
+    0 20px 45px rgba(37,99,235,.25),
+    0 0 35px rgba(56,189,248,.15);
 
 }
 
