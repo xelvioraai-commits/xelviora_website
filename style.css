@@ -1054,3 +1054,63 @@ font-size:28px;
 color:#94A3B8;
 
 }
+/* ==========================================
+   Statistics
+========================================== */
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+}
+
+.stat-card{
+
+background:#111827;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+padding:45px;
+
+text-align:center;
+
+transition:.4s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-12px);
+
+border-color:#38BDF8;
+
+box-shadow:
+0 20px 40px rgba(37,99,235,.25);
+
+}
+
+.stat-card h2{
+
+font-size:60px;
+
+color:#38BDF8;
+
+font-family:'Space Grotesk',sans-serif;
+
+margin-bottom:15px;
+
+}
+
+.stat-card p{
+
+color:#94A3B8;
+
+font-size:18px;
+
+}
