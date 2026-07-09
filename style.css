@@ -1364,3 +1364,67 @@ margin-bottom:8px;
 color:#94A3B8;
 
 }
+/* ==========================================
+   XEL STATES
+========================================== */
+
+.xel-hidden{
+
+    opacity:0;
+
+    transform:scale(.2);
+
+}
+
+.xel-peek{
+
+    transform:translateY(-35px);
+
+}
+
+.xel-wave{
+
+    animation:waveHand .8s ease-in-out 3;
+
+}
+
+.xel-idle{
+
+    animation:
+    floatBot 3s ease-in-out infinite;
+
+}
+
+@keyframes waveHand{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+25%{
+
+transform:rotate(-12deg);
+
+}
+
+50%{
+
+transform:rotate(12deg);
+
+}
+
+75%{
+
+transform:rotate(-12deg);
+
+}
+
+100%{
+
+transform:rotate(0deg);
+
+}
+
+}
