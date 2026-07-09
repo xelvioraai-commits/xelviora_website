@@ -166,8 +166,4 @@ window.addEventListener("scroll", () => {
 
 const assistant = document.querySelector(".assistant-image");
 
-assistant.addEventListener("click", () => {
 
-    alert("👋 Hi! I'm Xel.\n\nThe AI assistant is currently under development.");
-
-});
