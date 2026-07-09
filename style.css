@@ -397,19 +397,29 @@ cursor:pointer;
 
     background:#111827;
 
-    padding:35px;
+    border:1px solid rgba(255,255,255,.08);
 
-    border-radius:18px;
+    border-radius:20px;
+
+    padding:40px;
 
     text-align:center;
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
 
 }
 
 .about-card h3{
 
-    margin-bottom:20px;
+    margin:25px 0 15px;
 
-    font-size:28px;
+    font-size:30px;
+
+    transition:.3s;
 
 }
 
@@ -896,5 +906,68 @@ letter-spacing:1px;
 transform:
 rotate(-8deg)
 scale(1.2);
+
+}
+/* ==========================================
+   About Section Upgrade
+========================================== */
+
+.about-icon{
+
+font-size:58px;
+
+margin-bottom:15px;
+
+transition:.4s;
+
+}
+
+.about-card:hover{
+
+transform:translateY(-12px);
+
+border-color:#38BDF8;
+
+box-shadow:
+0 20px 45px rgba(37,99,235,.25),
+0 0 30px rgba(56,189,248,.15);
+
+}
+
+.about-card:hover .about-icon{
+
+transform:scale(1.2) rotate(-8deg);
+
+}
+
+.about-card:hover h3{
+
+color:#38BDF8;
+
+}
+
+.about-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-100%;
+
+width:100%;
+
+height:4px;
+
+background:#38BDF8;
+
+transition:.6s;
+
+}
+
+.about-card:hover::before{
+
+left:100%;
 
 }
