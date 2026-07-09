@@ -42,17 +42,13 @@ async function introAnimation(){
 
 function peek(){
 
-    xel.style.bottom="85vh";
-
-    xel.style.right="120px";
+    moveToElement(discoveryButton,-20,40);
 
 }
 
 function jumpToHero(){
 
-    xel.style.bottom="58vh";
-
-    xel.style.right="46vw";
+    moveToElement(heroTitle,220,-90);
 
 }
 
