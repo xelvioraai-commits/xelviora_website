@@ -1279,3 +1279,106 @@ text-align:center;
 color:#64748B;
 
 }
+/* ==========================================
+   XEL AI ASSISTANT
+========================================== */
+
+.ai-assistant{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    z-index:99999;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:15px;
+
+}
+
+.assistant-image{
+
+    width:95px;
+
+    height:auto;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    animation:floatBot 3.5s ease-in-out infinite;
+
+    transition:.35s;
+
+    filter:drop-shadow(0 0 20px rgba(56,189,248,.45));
+
+}
+
+.assistant-image:hover{
+
+    transform:scale(1.08);
+
+    filter:drop-shadow(0 0 35px rgba(56,189,248,.85));
+
+}
+
+.assistant-tooltip{
+
+    background:#111827;
+
+    color:white;
+
+    padding:14px 18px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    opacity:0;
+
+    transform:translateX(20px);
+
+    transition:.35s;
+
+    white-space:nowrap;
+
+}
+
+.ai-assistant:hover .assistant-tooltip{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+@keyframes floatBot{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
