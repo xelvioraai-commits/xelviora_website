@@ -1114,3 +1114,53 @@ color:#94A3B8;
 font-size:18px;
 
 }
+/* ==========================================
+   Technologies
+========================================== */
+
+.tech-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:25px;
+
+margin-top:60px;
+
+}
+
+.tech-card{
+
+background:#111827;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:18px;
+
+padding:35px;
+
+text-align:center;
+
+font-size:22px;
+
+font-weight:600;
+
+transition:.4s;
+
+cursor:pointer;
+
+}
+
+.tech-card:hover{
+
+transform:translateY(-8px);
+
+background:#2563EB;
+
+border-color:#38BDF8;
+
+box-shadow:
+0 15px 35px rgba(37,99,235,.25);
+
+}
