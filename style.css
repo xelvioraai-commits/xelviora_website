@@ -1280,105 +1280,87 @@ color:#64748B;
 
 }
 /* ==========================================
-   XEL AI ASSISTANT
+   XEL AI
 ========================================== */
 
-.ai-assistant{
+#xel{
 
-    position:fixed;
+position:fixed;
 
-    bottom:25px;
+right:30px;
 
-    right:25px;
+bottom:20px;
 
-    z-index:99999;
+z-index:99999;
 
-    display:flex;
-
-    align-items:flex-end;
-
-    gap:15px;
+transition:all 1.2s cubic-bezier(.68,-0.55,.27,1.55);
 
 }
 
-.assistant-image{
+#xel-img{
 
-    width:95px;
+width:95px;
 
-    height:auto;
+cursor:pointer;
 
-    cursor:pointer;
+user-select:none;
 
-    user-select:none;
+filter:drop-shadow(0 0 25px rgba(56,189,248,.45));
 
-    animation:floatBot 3.5s ease-in-out infinite;
-
-    transition:.35s;
-
-    filter:drop-shadow(0 0 20px rgba(56,189,248,.45));
+transition:.4s;
 
 }
 
-.assistant-image:hover{
+#xel-img:hover{
 
-    transform:scale(1.08);
-
-    filter:drop-shadow(0 0 35px rgba(56,189,248,.85));
+transform:scale(1.05);
 
 }
 
-.assistant-tooltip{
+#xel-message{
 
-    background:#111827;
+position:fixed;
 
-    color:white;
+right:140px;
 
-    padding:14px 18px;
+bottom:55px;
 
-    border-radius:16px;
+opacity:0;
 
-    border:1px solid rgba(255,255,255,.08);
+transform:translateY(30px);
 
-    font-size:14px;
+transition:.5s;
 
-    line-height:1.6;
+pointer-events:none;
 
-    opacity:0;
-
-    transform:translateX(20px);
-
-    transition:.35s;
-
-    white-space:nowrap;
+z-index:99998;
 
 }
 
-.ai-assistant:hover .assistant-tooltip{
+.xel-bubble{
 
-    opacity:1;
+background:#111827;
 
-    transform:translateX(0);
+padding:18px 22px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+width:240px;
 
 }
 
-@keyframes floatBot{
+.xel-bubble h3{
 
-    0%{
+margin-bottom:8px;
 
-        transform:translateY(0);
+}
 
-    }
+.xel-bubble p{
 
-    50%{
-
-        transform:translateY(-12px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
+color:#94A3B8;
 
 }
