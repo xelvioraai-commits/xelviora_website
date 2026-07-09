@@ -1202,3 +1202,80 @@ box-shadow:
 0 15px 35px rgba(37,99,235,.25);
 
 }
+/* ==========================================
+   Professional Footer
+========================================== */
+
+footer{
+
+background:#030712;
+
+padding:80px 8% 30px;
+
+margin-top:100px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:40px;
+
+margin-bottom:50px;
+
+}
+
+.footer-grid h3{
+
+font-size:34px;
+
+margin-bottom:20px;
+
+font-family:'Space Grotesk',sans-serif;
+
+}
+
+.footer-grid h4{
+
+margin-bottom:20px;
+
+color:#38BDF8;
+
+}
+
+.footer-grid p{
+
+color:#94A3B8;
+
+margin-bottom:12px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.footer-grid p:hover{
+
+color:white;
+
+padding-left:6px;
+
+}
+
+.footer-bottom{
+
+border-top:1px solid rgba(255,255,255,.08);
+
+padding-top:25px;
+
+text-align:center;
+
+color:#64748B;
+
+}
