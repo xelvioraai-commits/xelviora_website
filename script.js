@@ -6,6 +6,10 @@ const xel=document.getElementById("xel");
 
 const message=document.getElementById("xel-message");
 
+const discoveryButton=document.getElementById("discovery-btn");
+
+const heroTitle=document.getElementById("hero-title");
+
 window.addEventListener("load",()=>{
 
     introAnimation();
@@ -77,6 +81,26 @@ function goToCorner(){
     message.style.right="120px";
 
 }
+
+/* ==========================================
+   MOVE TO ELEMENT
+========================================== */
+
+function moveToElement(element, offsetX=0, offsetY=0){
+
+    const rect = element.getBoundingClientRect();
+
+    const x = rect.left + rect.width/2 + offsetX;
+
+    const y = rect.top + rect.height/2 + offsetY;
+
+    xel.style.left = x + "px";
+
+    xel.style.top = y + "px";
+
+    xel.style.right = "auto";
+
+    xel.style.bottom = "auto";
 
 function wait(ms){
 
