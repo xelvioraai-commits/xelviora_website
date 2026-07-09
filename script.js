@@ -1,169 +1,85 @@
-// ==========================================
-// XELVIORA WEBSITE
-// script.js
-// ==========================================
+/* ==========================================
+   XEL ANIMATION ENGINE v1
+========================================== */
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
+const xel=document.getElementById("xel");
 
-        e.preventDefault();
+const message=document.getElementById("xel-message");
 
-        const target = document.querySelector(this.getAttribute("href"));
+window.addEventListener("load",()=>{
 
-        if (target) {
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
-
-    });
-});
-
-
-// Navbar background on scroll
-const navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 80) {
-
-        navbar.style.background = "rgba(5,8,22,0.95)";
-        navbar.style.backdropFilter = "blur(18px)";
-        navbar.style.boxShadow = "0 10px 35px rgba(0,0,0,0.35)";
-
-    } else {
-
-        navbar.style.background = "rgba(255,255,255,0.05)";
-        navbar.style.boxShadow = "none";
-
-    }
+    introAnimation();
 
 });
 
+async function introAnimation(){
 
-// Scroll reveal animation
-const observer = new IntersectionObserver((entries) => {
+    await wait(1200);
 
-    entries.forEach(entry => {
+    peek();
 
-        if (entry.isIntersecting) {
+    await wait(1000);
 
-            entry.target.classList.add("show");
+    jumpToHero();
 
-        }
+    await wait(1200);
 
-    });
+    wave();
 
-}, {
-    threshold: 0.15
-});
+    await wait(1200);
 
-document.querySelectorAll("section, .card, .industry-card, .about-card")
-.forEach(el => {
+    speak();
 
-    el.classList.add("hidden");
+    await wait(2200);
 
-    observer.observe(el);
-    el.style.transitionProperty = "opacity, transform";
-
-
-});
-
-
-// Button ripple effect
-document.querySelectorAll(".primary-btn").forEach(button => {
-
-    button.addEventListener("click", function(e){
-
-        const ripple = document.createElement("span");
-
-        ripple.classList.add("ripple");
-
-        const rect = this.getBoundingClientRect();
-
-        ripple.style.left = `${e.clientX - rect.left}px`;
-        ripple.style.top = `${e.clientY - rect.top}px`;
-
-        this.appendChild(ripple);
-
-        setTimeout(() => {
-
-            ripple.remove();
-
-        },600);
-
-    });
-
-});
-
-
-// Current year in footer (optional)
-const year = new Date().getFullYear();
-
-const footer = document.querySelector("footer p");
-
-if(footer){
-
-    footer.innerHTML = `© ${year} Xelviora. All Rights Reserved.`;
+   goToCorner();
 
 }
 
-console.log("✅ Xelviora Loaded Successfully");
-/* ==========================================
-   Mouse Spotlight
-========================================== */
+function peek(){
 
-const glow = document.querySelector(".mouse-glow");
+    xel.style.bottom="85vh";
 
-document.addEventListener("mousemove",(e)=>{
+    xel.style.right="120px";
 
-    glow.style.left = e.clientX + "px";
+}
 
-    glow.style.top = e.clientY + "px";
+function jumpToHero(){
 
-});
-/* ==========================================
-   Active Navigation
-========================================== */
+    xel.style.bottom="58vh";
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
+    xel.style.right="46vw";
 
-window.addEventListener("scroll", () => {
+}
 
-    let current = "";
+function wave(){
 
-    sections.forEach(section => {
+    xel.classList.add("xel-wave");
 
-        const sectionTop = section.offsetTop - 150;
+}
 
-        if (window.scrollY >= sectionTop) {
+function speak(){
 
-            current = section.getAttribute("id");
+    message.style.opacity="1";
 
-        }
+    message.style.transform="translateY(0)";
 
-    });
+}
 
-    navLinks.forEach(link => {
+function goToCorner(){
 
-        link.classList.remove("active");
+    xel.style.bottom="25px";
 
-        if (link.getAttribute("href") === "#" + current) {
+    xel.style.right="25px";
 
-            link.classList.add("active");
+    message.style.bottom="120px";
 
-        }
+    message.style.right="120px";
 
-    });
+}
 
-});
-/* ==========================================
-   XEL AI ASSISTANT
-========================================== */
+function wait(ms){
 
-const assistant = document.querySelector(".assistant-image");
+    return new Promise(resolve=>setTimeout(resolve,ms));
 
-
+}
