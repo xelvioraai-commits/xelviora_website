@@ -17,23 +17,23 @@
 
 #xel{
 
-    position:fixed;
+    position:absolute;
 
-    left:0;
+    right:-20px;
 
-    top:0;
+    bottom:-12px;
 
-    width:90px;
+    width:70px;
 
-    height:90px;
+    height:70px;
 
-    z-index:999999;
+    z-index:100;
 
-    pointer-events:auto;
-
-    will-change:transform;
+    pointer-events:none;
 
     transform-origin:center center;
+
+    will-change:transform;
 
 }
 
