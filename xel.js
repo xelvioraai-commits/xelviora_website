@@ -13,7 +13,9 @@ window.addEventListener("load", startXel);
 
 function startXel(){
 
-    console.log("Starting Xel...");
+    console.log(getCenter(discoveryBtn));
+
+console.log(getCenter(heroTitle));
 
 }
 function getCenter(element){
