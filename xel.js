@@ -8,23 +8,28 @@ const bubble = document.getElementById("xel-message");
 const discoveryBtn = document.getElementById("discovery-btn");
 const heroTitle = document.getElementById("hero-title");
 
+window.addEventListener("load", startXel);
+
 /* ==========================================
    START
 ========================================== */
 
-window.addEventListener("load", startXel);
-
 function startXel(){
+
+    const btn = discoveryBtn.getBoundingClientRect();
 
     gsap.set(xel,{
 
-        x:0,
-        y:0,
-        scale:0.8,
+        x: btn.right - 25,
+
+        y: btn.top + btn.height/2 - 45,
+
+        scale:0.75,
+
         rotation:0
 
     });
 
-    console.log("XEL V3 READY");
+    console.log("Xel positioned.");
 
 }
