@@ -48,9 +48,9 @@ function calculatePositions(){
     POSITIONS = {
 
         button:{
-            x:btn.right-65,
-            y:btn.top+15
-        },
+    x:btn.left + btn.width - 40,
+    y:btn.top + 20
+},
 
         hero:{
             x:hero.left+hero.width*0.42,
