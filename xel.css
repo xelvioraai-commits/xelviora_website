@@ -19,30 +19,15 @@
 
     position:fixed;
 
-    width:var(--xel-size);
+    width:90px;
 
-    height:var(--xel-size);
-
-    left:50%;
-
-    top:50%;
+    height:90px;
 
     z-index:999999;
 
-    transform:
-        translate3d(0,0,0);
-
-    transition:
-
-        transform var(--xel-speed) cubic-bezier(.22,1,.36,1),
-
-        filter .4s,
-
-        opacity .4s;
+    pointer-events:auto;
 
     will-change:transform;
-
-    pointer-events:auto;
 
 }
 
