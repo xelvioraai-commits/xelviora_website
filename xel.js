@@ -57,8 +57,8 @@ function positionBehindButton(){
 
     moveXel(
 
-    p.x+55,
+    p.x + 180,
 
-    p.y-15
+    p.y - 40
 
 );
