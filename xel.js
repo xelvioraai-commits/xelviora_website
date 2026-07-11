@@ -16,6 +16,34 @@ function startXel(){
 
     positionBehindButton();
 
+    const tl = gsap.timeline();
+
+    tl
+
+    .to({},{
+        duration:0.8
+    })
+
+    // Peek
+    .to(xel,{
+        x:"-=18",
+        duration:0.45,
+        ease:"power2.out"
+    })
+
+    // Hide again
+    .to(xel,{
+        x:"+=18",
+        duration:0.25
+    })
+
+    // Peek further
+    .to(xel,{
+        x:"-=35",
+        duration:0.45,
+        ease:"back.out(2)"
+    });
+
 }
 
 function hideBubble(){
