@@ -16,35 +16,37 @@ function startXel(){
 
     positionBehindButton();
 
-    const tl = gsap.timeline();
+ const tl = gsap.timeline();
 
-    tl
+tl
 
-    .to({},{
-        duration:0.8
-    })
+.to({},{
+    duration:0.8
+})
 
-    // Peek
-    .to(xel,{
-        x:"-=18",
-        duration:0.45,
-        ease:"power2.out"
-    })
+.to(xel,{
+    x:"-=15",
+    y:"-=8",
+    rotation:-8,
+    duration:0.28,
+    ease:"power2.out"
+})
 
-    // Hide again
-    .to(xel,{
-        x:"+=18",
-        duration:0.25
-    })
+.to(xel,{
+    x:"+=15",
+    y:"+=8",
+    rotation:0,
+    duration:0.22,
+    ease:"power2.in"
+})
 
-    // Peek further
-    .to(xel,{
-        x:"-=35",
-        duration:0.45,
-        ease:"back.out(2)"
-    });
-
-}
+.to(xel,{
+    x:"-=30",
+    y:"-=14",
+    rotation:-10,
+    duration:0.35,
+    ease:"back.out(2)"
+});
 
 function hideBubble(){
 
