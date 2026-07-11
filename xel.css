@@ -23,9 +23,9 @@
 
     height:var(--xel-size);
 
-    left:0;
+    left:50%;
 
-    top:0;
+    top:50%;
 
     z-index:999999;
 
