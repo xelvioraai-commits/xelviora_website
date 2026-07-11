@@ -39,13 +39,17 @@ function centerOf(element){
 
 }
 
-function moveXel(x,y){
+function moveXel(x, y){
 
     gsap.set(xel,{
 
-        x:x,
+        left: x + "px",
 
-        y:y
+        top: y + "px",
+
+        x: -45,
+
+        y: -45
 
     });
 
@@ -55,10 +59,12 @@ function positionBehindButton(){
 
     const p = centerOf(discoveryBtn);
 
-moveXel(
+    moveXel(
 
-    p.x + 250,
+        p.x + 140,
 
-    p.y - 40
+        p.y
 
-);
+    );
+
+}
