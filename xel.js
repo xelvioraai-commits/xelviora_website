@@ -16,3 +16,16 @@ function startXel(){
     console.log("Starting Xel...");
 
 }
+function getCenter(element){
+
+    const rect = element.getBoundingClientRect();
+
+    return{
+
+        x: rect.left + rect.width/2,
+
+        y: rect.top + rect.height/2
+
+    };
+
+}
