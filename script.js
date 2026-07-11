@@ -97,6 +97,7 @@ function moveToElement(element, offsetX=0, offsetY=0){
     xel.style.right = "auto";
 
     xel.style.bottom = "auto";
+}
 
 function wait(ms){
 
