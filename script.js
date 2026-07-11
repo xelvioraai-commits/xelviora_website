@@ -1,126 +1,105 @@
-/* ==========================================
-   XEL ENGINE 3.0
-========================================== */
+/* ==========================================================
+   XEL ENGINE 1.0
+   FEATURE 1 - POSITION ENGINE
+========================================================== */
 
 const xel = document.getElementById("xel");
-const bubble = document.getElementById("xel-message");
+const button = document.getElementById("discovery-btn");
+const hero = document.getElementById("hero-title");
 
-const discoveryBtn = document.getElementById("discovery-btn");
-const heroTitle = document.getElementById("hero-title");
+const POS = {};
 
-window.addEventListener("load", startXel);
+window.addEventListener("load", initXel);
+window.addEventListener("resize", calculatePositions);
 
-function startXel(){
+function initXel(){
 
-    const btn = discoveryBtn.getBoundingClientRect();
+    calculatePositions();
 
-    const hero = heroTitle.getBoundingClientRect();
+    moveTo("home",0);
 
-    const startX = btn.right - 35;
-    const startY = btn.top + 10;
+    console.log("XEL POSITION ENGINE READY");
 
-    const heroX = hero.left + hero.width * 0.42;
-    const heroY = hero.top + 25;
+}
 
-    const cornerX = window.innerWidth - 120;
-    const cornerY = window.innerHeight - 120;
+/* ==========================================================
+   POSITIONS
+========================================================== */
 
-    gsap.set(xel,{
-        x:startX,
-        y:startY,
-        scale:.82
-    });
+function calculatePositions(){
 
-    gsap.set(bubble,{
-        opacity:0
-    });
+    const btn = button.getBoundingClientRect();
 
-    const tl = gsap.timeline();
+    const title = hero.getBoundingClientRect();
 
-    // Peek
-    tl.to(xel,{
-        y:startY-18,
-        duration:.35,
-        ease:"power2.out"
-    });
+    POS.home = {
 
-    tl.to(xel,{
-        y:startY,
-        duration:.25,
-        ease:"bounce.out"
-    });
+        x:window.innerWidth-120,
 
-    // Jump to hero
-    tl.to(xel,{
-        x:heroX,
-        y:heroY,
-        scale:1,
-        duration:1.2,
-        ease:"power2.inOut"
-    });
+        y:window.innerHeight-120
 
-    // Bounce landing
-    tl.to(xel,{
-        y:"-=12",
-        duration:.18,
-        yoyo:true,
-        repeat:1
-    });
+    };
 
-    // Wave
-    tl.to("#xel-img",{
-        rotation:18,
-        duration:.18,
-        transformOrigin:"bottom center",
-        repeat:5,
-        yoyo:true
-    });
+    POS.button = {
 
-    // Bubble
-    tl.call(showBubble);
+        x:btn.right-30,
 
-    tl.to({},{
-        duration:2
-    });
+        y:btn.top+8
 
-    tl.call(hideBubble);
+    };
 
-    // Return
-    tl.to(xel,{
-        x:cornerX,
-        y:cornerY,
-        scale:.85,
-        duration:1,
-        ease:"power2.inOut"
-    });
+    POS.hero = {
 
-    // Idle
+        x:title.left+(title.width*0.42),
+
+        y:title.top+18
+
+    };
+
+}
+
+/* ==========================================================
+   MOVE
+========================================================== */
+
+function moveTo(position,duration=.9){
+
     gsap.to(xel,{
-        y:"-=8",
-        repeat:-1,
-        yoyo:true,
-        ease:"sine.inOut",
-        duration:1.8
+
+        x:POS[position].x,
+
+        y:POS[position].y,
+
+        duration,
+
+        ease:"power2.inOut"
+
     });
 
 }
 
-function showBubble(){
+/* ==========================================================
+   DEBUG KEYS
+========================================================== */
 
-    bubble.style.left =
-        (window.innerWidth-320)+"px";
+window.addEventListener("keydown",(e)=>{
 
-    bubble.style.top =
-        (window.innerHeight-220)+"px";
+    if(e.key==="1"){
 
-    bubble.style.opacity=1;
+        moveTo("button");
 
-    bubble.style.transform="translateY(0)";
+    }
 
-}
+    if(e.key==="2"){
 
-function hideBubble(){
+        moveTo("hero");
 
-    bubble.style.opacity=0;
+    }
 
-}
+    if(e.key==="3"){
+
+        moveTo("home");
+
+    }
+
+});
