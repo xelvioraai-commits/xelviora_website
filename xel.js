@@ -55,9 +55,9 @@ function positionBehindButton(){
 
     const p = centerOf(discoveryBtn);
 
-    moveXel(
+moveXel(
 
-    p.x + 180,
+    p.x + 250,
 
     p.y - 40
 
