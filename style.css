@@ -1310,6 +1310,7 @@ color:#64748B;
     width:100%;
 
     display:block;
+   transform-origin:center center;
 
     filter:drop-shadow(0 10px 25px rgba(56,189,248,.45));
 
