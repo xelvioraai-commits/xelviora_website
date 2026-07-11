@@ -32,7 +32,7 @@ function positionBehindButton(){
 
 gsap.set(xel,{
 
-    x: rect.right - 65,
+    x: rect.right - 85,
 
     y: rect.top + 10,
 
