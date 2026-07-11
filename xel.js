@@ -30,16 +30,14 @@ function positionBehindButton(){
 
     const rect = discoveryBtn.getBoundingClientRect();
 
-    gsap.set(xel,{
+gsap.set(xel,{
 
-        x: rect.right - 20,
+    x: rect.right - 65,
 
-        y: rect.top + 18,
+    y: rect.top + 10,
 
-        scale:0.85,
+    scale:0.85,
 
-        rotation:0
+    rotation:0
 
-    });
-
-}
+});
