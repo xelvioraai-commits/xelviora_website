@@ -1,5 +1,5 @@
 /* ==========================================
-   XEL ENGINE V3
+   XEL ENGINE V4
 ========================================== */
 
 const xel = document.getElementById("xel");
@@ -10,24 +10,36 @@ const heroTitle = document.getElementById("hero-title");
 
 window.addEventListener("load", startXel);
 
-/* ==========================================
-   START
-========================================== */
-
 function startXel(){
+
+    hideBubble();
+
+    positionBehindButton();
+
+}
+
+function hideBubble(){
+
+    gsap.set(bubble,{
+        opacity:0
+    });
+
+}
+
+function positionBehindButton(){
+
+    const rect = discoveryBtn.getBoundingClientRect();
 
     gsap.set(xel,{
 
-        x:300,
+        x: rect.right - 20,
 
-        y:300,
+        y: rect.top + 18,
 
-        scale:0.8,
+        scale:0.85,
 
         rotation:0
 
     });
-
-    console.log("Xel Test Position");
 
 }
