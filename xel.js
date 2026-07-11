@@ -1,5 +1,5 @@
 /* ==========================================
-   XEL ENGINE v2
+   XEL ENGINE V2
 ========================================== */
 
 const xel = document.getElementById("xel");
@@ -11,23 +11,56 @@ const heroTitle = document.getElementById("hero-title");
 
 window.addEventListener("load", startXel);
 
+/* ==========================================
+   START
+========================================== */
+
 function startXel(){
 
-    console.log(getCenter(discoveryBtn));
-
-console.log(getCenter(heroTitle));
+    positionBehindButton();
 
 }
-function getCenter(element){
+
+/* ==========================================
+   POSITIONS
+========================================== */
+
+function centerOf(element){
 
     const rect = element.getBoundingClientRect();
 
     return{
 
-        x: rect.left + rect.width/2,
+        x:rect.left + rect.width/2,
 
-        y: rect.top + rect.height/2
+        y:rect.top + rect.height/2
 
     };
+
+}
+
+function moveXel(x,y){
+
+    gsap.set(xel,{
+
+        x:x,
+
+        y:y
+
+    });
+
+}
+
+function positionBehindButton(){
+
+    const p = centerOf(discoveryBtn);
+
+    moveXel(
+
+        p.x+110,
+
+        p.y-20
+
+    );
 
 }
