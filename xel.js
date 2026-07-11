@@ -16,20 +16,18 @@ window.addEventListener("load", startXel);
 
 function startXel(){
 
-    const btn = discoveryBtn.getBoundingClientRect();
-
     gsap.set(xel,{
 
-        x: btn.right - 25,
+        x:300,
 
-        y: btn.top + btn.height/2 - 45,
+        y:300,
 
-        scale:0.75,
+        scale:0.8,
 
         rotation:0
 
     });
 
-    console.log("Xel positioned.");
+    console.log("Xel Test Position");
 
 }
