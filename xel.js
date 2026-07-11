@@ -90,10 +90,36 @@ function moveTo(position,duration=1){
 
 window.addEventListener("keydown",(e)=>{
 
-    if(e.key==="1") moveTo(POSITIONS.button);
+    switch(e.key){
 
-    if(e.key==="2") moveTo(POSITIONS.hero);
+        case "ArrowLeft":
+            gsap.set(xel,{x:"-=10"});
+            break;
 
-    if(e.key==="3") moveTo(POSITIONS.corner);
+        case "ArrowRight":
+            gsap.set(xel,{x:"+=10"});
+            break;
+
+        case "ArrowUp":
+            gsap.set(xel,{y:"-=10"});
+            break;
+
+        case "ArrowDown":
+            gsap.set(xel,{y:"+=10"});
+            break;
+
+        case "1":
+            moveTo(POSITIONS.button);
+            break;
+
+        case "2":
+            moveTo(POSITIONS.hero);
+            break;
+
+        case "3":
+            moveTo(POSITIONS.corner);
+            break;
+
+    }
 
 });
