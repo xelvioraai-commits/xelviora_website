@@ -79,27 +79,69 @@ function moveTo(position,duration=.9){
 }
 
 /* ==========================================================
-   DEBUG KEYS
+   INTRO TIMELINE
 ========================================================== */
 
-window.addEventListener("keydown",(e)=>{
+function playIntro(){
 
-    if(e.key==="1"){
+    const tl = gsap.timeline({
 
-        moveTo("button");
+        delay:.8
 
-    }
+    });
 
-    if(e.key==="2"){
+    // Move to navbar
 
-        moveTo("hero");
+    tl.to(xel,{
 
-    }
+        x:POS.button.x,
 
-    if(e.key==="3"){
+        y:POS.button.y,
 
-        moveTo("home");
+        duration:.9,
 
-    }
+        ease:"power2.inOut"
 
-});
+    });
+
+    // Peek
+
+    tl.to(xel,{
+
+        y:POS.button.y-18,
+
+        duration:.28,
+
+        ease:"power2.out"
+
+    });
+
+    // Peek back
+
+    tl.to(xel,{
+
+        y:POS.button.y,
+
+        duration:.20,
+
+        ease:"power2.in"
+
+    });
+
+    // Big jump
+
+    tl.to(xel,{
+
+        x:POS.hero.x,
+
+        y:POS.hero.y,
+
+        scale:1,
+
+        duration:1.1,
+
+        ease:"back.inOut(1.6)"
+
+    });
+
+}
