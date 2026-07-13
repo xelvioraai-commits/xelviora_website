@@ -52,7 +52,7 @@ function blink(){
 
         walkRight();
 
-    },350);
+    },2000);
 
 }
 
