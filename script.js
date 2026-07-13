@@ -147,3 +147,93 @@ function playIntro(){
     });
 
 }
+// Landing bounce
+
+tl.to(xel,{
+
+    y:POS.hero.y-15,
+
+    duration:.12,
+
+    yoyo:true,
+
+    repeat:1
+
+});
+
+// Wave
+
+tl.to("#xel-img",{
+
+    rotation:18,
+
+    duration:.12,
+
+    repeat:5,
+
+    yoyo:true,
+
+    transformOrigin:"bottom center"
+
+});
+
+// Bubble
+
+tl.call(showBubble);
+
+// Wait
+
+tl.to({},{
+
+    duration:2
+
+});
+
+// Hide bubble
+
+tl.call(hideBubble);
+/* ==========================================================
+   BUBBLE
+========================================================== */
+
+function showBubble(){
+
+    const bubble=document.getElementById("xel-message");
+
+    gsap.set(bubble,{
+
+        x:POS.hero.x+70,
+
+        y:POS.hero.y-30
+
+    });
+
+    gsap.to(bubble,{
+
+        opacity:1,
+
+        scale:1,
+
+        y:POS.hero.y-45,
+
+        duration:.45,
+
+        ease:"back.out(1.8)"
+
+    });
+
+}
+
+function hideBubble(){
+
+    gsap.to("#xel-message",{
+
+        opacity:0,
+
+        scale:.8,
+
+        duration:.35
+
+    });
+
+}
