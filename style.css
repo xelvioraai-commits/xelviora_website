@@ -1326,6 +1326,8 @@ color:#64748B;
 
     transform:translate(-50%,-50%) scale(.8);
 
+    transform-origin:left bottom;
+
     pointer-events:none;
 
     z-index:999998;
