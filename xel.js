@@ -93,21 +93,15 @@ function animateWalk(){
     },120);
 
     // Body moves slightly up and down while walking
-    bounceTween = gsap.to(xel,{
+   if(bounceTween){
 
-        y:"-=6",
-
-        duration:.18,
-
-        repeat:-1,
-
-        yoyo:true,
-
-        ease:"power1.inOut"
-
-    });
+    bounceTween.kill();
 
 }
+
+gsap.set(xel,{
+    y:HOME.y
+});
 
 function stopWalk(){
 
@@ -133,8 +127,8 @@ function showBubble(){
 
     gsap.set(bubble,{
 
-        left: rect.left - 220,
-        top: rect.top - 20
+        left: rect.left - 190,
+        top: rect.top + 20
 
     });
 
