@@ -200,27 +200,19 @@ tl.call(hideBubble);
 
 function showBubble(){
 
-    const bubble=document.getElementById("xel-message");
+    gsap.set("#xel-message",{
 
-    gsap.set(bubble,{
-
-        x:POS.hero.x+70,
-
-        y:POS.hero.y-30
+        left: POS.hero.x + 170,
+        top: POS.hero.y - 20
 
     });
 
-    gsap.to(bubble,{
+    gsap.to("#xel-message",{
 
         opacity:1,
-
         scale:1,
-
-        y:POS.hero.y-45,
-
         duration:.45,
-
-        ease:"back.out(1.8)"
+        ease:"back.out(2)"
 
     });
 
@@ -234,7 +226,7 @@ function hideBubble(){
 
         scale:.8,
 
-        duration:.35
+        duration:.3
 
     });
 
