@@ -1320,25 +1320,25 @@ color:#64748B;
 
     opacity:0;
 
-    transform:translateY(15px);
-
-    transition:.35s;
+    transform-origin:left bottom;
 
     z-index:999998;
+
+    pointer-events:none;
 
 }
 
 .xel-bubble{
 
-    width:250px;
+    width:270px;
 
     padding:18px;
+
+    border-radius:18px;
 
     background:#111827;
 
     color:white;
-
-    border-radius:18px;
 
     border:1px solid rgba(255,255,255,.08);
 
@@ -1355,5 +1355,7 @@ color:#64748B;
 .xel-bubble p{
 
     color:#94A3B8;
+
+    line-height:1.5;
 
 }
