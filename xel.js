@@ -32,7 +32,7 @@ function walkLeft(){
 
     gsap.to(xel,{
         x:HOME.x-WALK_DISTANCE,
-        duration:2,
+        duration:2.8,
         ease:"none",
         onComplete:()=>{
             stopWalk();
@@ -62,7 +62,7 @@ function walkRight(){
 
     gsap.to(xel,{
         x:HOME.x,
-        duration:2,
+        duration:2.8,
         ease:"none",
         onComplete:()=>{
             stopWalk();
@@ -73,6 +73,7 @@ function walkRight(){
 }
 
 let walkTimer;
+let bounceTween;
 
 function animateWalk(){
 
@@ -89,13 +90,38 @@ function animateWalk(){
 
         i=(i+1)%2;
 
-    },180);
+    },120);
+
+    // Body moves slightly up and down while walking
+    bounceTween = gsap.to(xel,{
+
+        y:"-=6",
+
+        duration:.18,
+
+        repeat:-1,
+
+        yoyo:true,
+
+        ease:"power1.inOut"
+
+    });
 
 }
 
 function stopWalk(){
 
     clearInterval(walkTimer);
+
+    if(bounceTween){
+
+        bounceTween.kill();
+
+    }
+
+    gsap.set(xel,{
+        y:HOME.y
+    });
 
     img.src="images/xel-idle.png";
 
