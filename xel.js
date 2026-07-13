@@ -1,21 +1,28 @@
 /* ===========================================
-   XEL WALK ENGINE 1.0
+   XEL WALK ENGINE 2.0
 =========================================== */
 
 const xel = document.getElementById("xel");
 const img = document.getElementById("xel-img");
 const bubble = document.getElementById("xel-message");
 
-const HOME = {
-    x: window.innerWidth - 120,
-    y: window.innerHeight - 120
-};
-
 const WALK_DISTANCE = 180;
 
+const HOME = {};
+
 window.addEventListener("load", startXel);
+window.addEventListener("resize", calculateHome);
+
+function calculateHome(){
+
+    HOME.x = window.innerWidth - 170;
+    HOME.y = window.innerHeight - 170;
+
+}
 
 function startXel(){
+
+    calculateHome();
 
     gsap.set(xel,{
         x:HOME.x,
@@ -32,11 +39,14 @@ function walkLeft(){
 
     gsap.to(xel,{
         x:HOME.x-WALK_DISTANCE,
-        duration:2.8,
+        duration:2.5,
         ease:"none",
         onComplete:()=>{
+
             stopWalk();
-            blink();
+
+            setTimeout(blink,1000);
+
         }
     });
 
@@ -50,9 +60,9 @@ function blink(){
 
         img.src="images/xel-idle.png";
 
-        walkRight();
+        setTimeout(walkRight,300);
 
-    },2000);
+    },180);
 
 }
 
@@ -61,61 +71,53 @@ function walkRight(){
     animateWalk();
 
     gsap.to(xel,{
+
         x:HOME.x,
-        duration:2.8,
+
+        duration:2.5,
+
         ease:"none",
+
         onComplete:()=>{
+
             stopWalk();
+
             showBubble();
+
         }
+
     });
 
 }
 
 let walkTimer;
-let bounceTween;
 
 function animateWalk(){
 
     const frames=[
+
         "images/xel-step1.png",
         "images/xel-step2.png"
+
     ];
 
     let i=0;
 
-    walkTimer=setInterval(()=>{
+    img.src=frames[0];
 
-        img.src=frames[i];
+    walkTimer=setInterval(()=>{
 
         i=(i+1)%2;
 
-    },120);
+        img.src=frames[i];
 
-    // Body moves slightly up and down while walking
-   if(bounceTween){
-
-    bounceTween.kill();
+    },180);
 
 }
-
-gsap.set(xel,{
-    y:HOME.y
-});
 
 function stopWalk(){
 
     clearInterval(walkTimer);
-
-    if(bounceTween){
-
-        bounceTween.kill();
-
-    }
-
-    gsap.set(xel,{
-        y:HOME.y
-    });
 
     img.src="images/xel-idle.png";
 
@@ -123,20 +125,22 @@ function stopWalk(){
 
 function showBubble(){
 
-    const rect = xel.getBoundingClientRect();
-
     gsap.set(bubble,{
 
-        left: rect.left - 190,
-        top: rect.top + 20
+        left:HOME.x-180,
+
+        top:HOME.y-20
 
     });
 
     gsap.to(bubble,{
 
         opacity:1,
+
         scale:1,
-        duration:.4,
+
+        duration:.35,
+
         ease:"back.out(1.7)"
 
     });
