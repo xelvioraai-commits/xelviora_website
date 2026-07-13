@@ -1318,13 +1318,17 @@ color:#64748B;
 
     position:fixed;
 
+    left:0;
+
+    top:0;
+
     opacity:0;
 
-    transform-origin:left bottom;
-
-    z-index:999998;
+    transform:translate(-50%,-50%) scale(.8);
 
     pointer-events:none;
+
+    z-index:999998;
 
 }
 
