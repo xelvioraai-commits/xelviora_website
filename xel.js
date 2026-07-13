@@ -129,15 +129,22 @@ function stopWalk(){
 
 function showBubble(){
 
+    const rect = xel.getBoundingClientRect();
+
     gsap.set(bubble,{
-        left:window.innerWidth-320,
-        top:window.innerHeight-180
+
+        left: rect.left - 220,
+        top: rect.top - 20
+
     });
 
     gsap.to(bubble,{
+
         opacity:1,
         scale:1,
-        duration:.4
+        duration:.4,
+        ease:"back.out(1.7)"
+
     });
 
 }
