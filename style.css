@@ -1289,13 +1289,13 @@ color:#64748B;
 
     position:fixed;
 
-    width:82px;
-
-    height:82px;
-
     left:0;
 
     top:0;
+
+    width:82px;
+
+    height:82px;
 
     z-index:999999;
 
@@ -1310,12 +1310,10 @@ color:#64748B;
     width:100%;
 
     display:block;
-   transform-origin:center center;
 
-    filter:drop-shadow(0 10px 25px rgba(56,189,248,.45));
+    object-fit:contain;
 
 }
-
 #xel-message{
 
     position:fixed;
