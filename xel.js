@@ -54,15 +54,19 @@ function walkLeft(){
 
 function blink(){
 
-    img.src="images/xel-blink.png";
+    console.log("Blink started");
 
-    setTimeout(()=>{
+    img.src = "images/xel-blink.png";
 
-        img.src="images/xel-idle.png";
+    setTimeout(() => {
 
-        setTimeout(walkRight,300);
+        img.src = "images/xel-idle.png";
 
-    },180);
+        console.log("Blink ended");
+
+        setTimeout(walkRight, 1000);
+
+    }, 500);
 
 }
 
