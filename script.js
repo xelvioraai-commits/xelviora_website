@@ -18,7 +18,9 @@ function initXel(){
 
     moveTo("home",0);
 
-    console.log("XEL POSITION ENGINE READY");
+    playIntro();
+
+    console.log("XEL INTRO READY");
 
 }
 
