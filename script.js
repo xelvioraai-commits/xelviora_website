@@ -146,18 +146,19 @@ function playIntro(){
 
     });
 
-}
 // Landing bounce
 
 tl.to(xel,{
 
-    y:POS.hero.y-15,
+    y:POS.hero.y-20,
 
-    duration:.12,
+    duration:.18,
+
+    repeat:1,
 
     yoyo:true,
 
-    repeat:1
+    ease:"bounce.out"
 
 });
 
@@ -192,6 +193,7 @@ tl.to({},{
 // Hide bubble
 
 tl.call(hideBubble);
+   }
 /* ==========================================================
    BUBBLE
 ========================================================== */
