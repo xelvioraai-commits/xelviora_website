@@ -1825,6 +1825,29 @@ color:#64748B;
     cursor:pointer;
 
 }
+   .close-menu{
+
+    display:none;
+
+    position:fixed;
+
+    top:22px;
+
+    right:20px;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    z-index:1002;
+
+}
 /* ==========================================
    MOBILE NAVBAR
 ========================================== */
@@ -1838,6 +1861,12 @@ color:#64748B;
         order:3;
 
     }
+   .close-menu{
+
+        display:block;
+
+    }
+
 
     .nav-links{
 
