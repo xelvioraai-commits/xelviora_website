@@ -154,38 +154,26 @@ function showBubble(){
    MOBILE MENU
 ========================================== */
 
-const menuToggle=document.getElementById("menu-toggle");
 
-const navLinks=document.getElementById("nav-links");
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
 
-menuToggle.onclick=()=>{
+if(menuToggle && navLinks){
 
-    if(navLinks.classList.contains("active")){
+    menuToggle.addEventListener("click", function(){
 
-        navLinks.classList.remove("active");
+        navLinks.classList.toggle("active");
 
-        menuToggle.innerHTML="☰";
+        if(navLinks.classList.contains("active")){
 
-    }else{
+            menuToggle.textContent = "✕";
 
-        navLinks.classList.add("active");
+        }else{
 
-        menuToggle.innerHTML="✕
+            menuToggle.textContent = "☰";
 
-";
+        }
 
-    }
+    });
 
 }
-
-document.querySelectorAll(".nav-links a").forEach(link=>{
-
-    link.onclick=()=>{
-
-        navLinks.classList.remove("active");
-
-        menuToggle.innerHTML="☰";
-
-    }
-
-});
