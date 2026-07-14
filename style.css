@@ -1840,41 +1840,42 @@ color:#64748B;
     }
 
 
-    .nav-links{
+   .nav-links{
 
-        position:fixed;
+    display:none;
 
-        top:0;
+    position:fixed;
 
-        right:-100%;
+    top:0;
 
-        width:280px;
+    right:-100%;
 
-        height:100vh;
+    width:280px;
 
-        background:#08111F;
+    height:100vh;
 
-        display:flex;
+    background:#08111F;
 
-        flex-direction:column;
+    flex-direction:column;
 
-        justify-content:flex-start;
+    justify-content:flex-start;
 
-        align-items:flex-start;
+    align-items:flex-start;
 
-        gap:28px;
+    gap:28px;
 
-        padding:120px 40px;
+    padding:120px 40px;
 
-        transition:.35s ease;
+    transition:right .35s ease;
 
-        border-left:1px solid rgba(255,255,255,.08);
+    border-left:1px solid rgba(255,255,255,.08);
 
-        z-index:1001;
+    z-index:1001;
 
-    }
+}
 
     .nav-links.active{
+       display:flex;
 
         right:0;
 
