@@ -131,16 +131,22 @@ color:#38BDF8;
 
 .nav-btn{
 
-    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
     background:#2563EB;
     color:white;
 
-    padding:15px 70px 15px 28px;
+    padding:15px 28px;
 
     border-radius:12px;
 
     transition:.3s;
+
+    text-align:center;
+
+    white-space:nowrap;
 
 }
 
