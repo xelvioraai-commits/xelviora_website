@@ -1665,6 +1665,21 @@ color:#64748B;
 ========================================== */
 
 @media (max-width:768px){
+   .menu-toggle{
+
+        display:block;
+
+    }
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .workspace-btn{
+
+        display:none;
 
     .nav-links{
 
@@ -1733,5 +1748,24 @@ color:#64748B;
         max-width:220px;
 
     }
+
+}
+/* ==========================================
+   MOBILE MENU
+========================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:32px;
+
+    cursor:pointer;
 
 }
