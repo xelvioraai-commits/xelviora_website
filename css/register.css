@@ -202,3 +202,50 @@
     }
 
 }
+.step-content{
+
+    display:none;
+
+    animation:fade .35s ease;
+
+}
+
+.step-content.active{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+.step-content.active{
+
+grid-template-columns:1fr;
+
+}
+
+}
