@@ -1935,3 +1935,181 @@ color:#64748B;
     }
 
 }
+/* ==========================================
+   REGISTER COMPANY
+========================================== */
+
+.register-page{
+
+width:100%;
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:40px;
+
+background:
+radial-gradient(circle at top left,
+rgba(37,99,235,.12),
+transparent 35%),
+radial-gradient(circle at bottom right,
+rgba(56,189,248,.10),
+transparent 35%),
+#050816;
+
+}
+
+.register-card{
+
+width:100%;
+
+max-width:650px;
+
+padding:50px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+}
+
+.register-card h1{
+
+text-align:center;
+
+font-size:42px;
+
+margin-bottom:12px;
+
+}
+
+.register-card h2{
+
+text-align:center;
+
+margin-bottom:10px;
+
+}
+
+.register-card p{
+
+text-align:center;
+
+color:#94A3B8;
+
+margin-bottom:35px;
+
+}
+
+.register-card form{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:18px;
+
+}
+
+.register-card input,
+.register-card select{
+
+width:100%;
+
+padding:16px;
+
+background:#111827;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:12px;
+
+color:white;
+
+font-size:15px;
+
+}
+
+.register-card input:focus,
+.register-card select:focus{
+
+outline:none;
+
+border-color:#38BDF8;
+
+}
+
+.register-card button{
+
+grid-column:1/-1;
+
+padding:18px;
+
+background:#2563EB;
+
+border:none;
+
+border-radius:14px;
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+margin-top:10px;
+
+transition:.3s;
+
+}
+
+.register-card button:hover{
+
+background:#1D4ED8;
+
+}
+
+.login-link{
+
+margin-top:30px;
+
+text-align:center;
+
+color:#94A3B8;
+
+}
+
+.login-link a{
+
+color:#38BDF8;
+
+font-weight:600;
+
+}
+
+@media(max-width:768px){
+
+.register-card{
+
+padding:35px;
+
+}
+
+.register-card form{
+
+grid-template-columns:1fr;
+
+}
+
+}
