@@ -44,21 +44,21 @@
 
         </div>
 
-        <h1>Create Your Workspace</h1>
+        <h1 id="formTitle">Create Your Workspace</h1>
 
-        <p>Step 1 of 4 — Company Details</p>
+<p id="stepText">
 
-        <form id="companyForm">
+    Step 1 of 4 — Company Details
 
-    <input
-        type="text"
-        placeholder="Company Name"
-        required>
+</p>
 
-    <input
-        type="email"
-        placeholder="Business Email"
-        required>
+<form id="companyForm">
+
+<div class="step-content active" id="step1">
+
+    <input type="text" placeholder="Company Name" required>
+
+    <input type="email" placeholder="Business Email" required>
 
     <select required>
 
@@ -86,11 +86,9 @@
 
         <option>Technology</option>
 
-        <option>Manufacturing</option>
-
         <option>Finance</option>
 
-        <option>Retail</option>
+        <option>Manufacturing</option>
 
     </select>
 
@@ -110,22 +108,57 @@
 
     </select>
 
-    <input
-        type="tel"
-        placeholder="Business Phone">
+    <input type="tel" placeholder="Business Phone">
 
-    <input
-        type="url"
-        placeholder="Company Website (Optional)">
+    <input type="url" placeholder="Company Website (Optional)">
 
-    <button id="continueBtn" type="button">
+</div>
 
-        Continue →
+<div class="step-content" id="step2">
 
-    </button>
+    <input type="text" placeholder="Administrator Name">
+
+    <input type="text" placeholder="Job Title">
+
+    <input type="email" placeholder="Administrator Email">
+
+    <input type="password" placeholder="Password">
+
+    <input type="password" placeholder="Confirm Password">
+
+</div>
+
+<div class="step-content" id="step3">
+
+    <input type="text" placeholder="Time Zone">
+
+    <input type="text" placeholder="Currency">
+
+    <input type="text" placeholder="Language">
+
+    <input type="file">
+
+</div>
+
+<div class="step-content" id="step4">
+
+    <h2>Review Your Details</h2>
+
+    <p>
+
+        Click Create Workspace to finish.
+
+    </p>
+
+</div>
+
+<button type="button" id="continueBtn">
+
+    Continue →
+
+</button>
 
 </form>
-
     </div>
 
 </div>
