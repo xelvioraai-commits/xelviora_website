@@ -27,7 +27,7 @@
 .register-card{
 
     width:100%;
-    max-width:980px;
+    max-width:1200px;
 
     background:rgba(255,255,255,.05);
 
@@ -115,15 +115,11 @@
 
 .register-card form{
 
-    display:grid;
+    width:100%;
 
-    grid-template-columns:repeat(2,minmax(320px,1fr));
+    max-width:100%;
 
-    gap:22px;
-
-    max-width:900px;
-
-    margin:0 auto;
+    margin:0;
 
 }
 
@@ -219,9 +215,11 @@
 
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,minmax(420px,1fr));
 
-    gap:18px;
+    gap:28px;
+
+    width:100%;
 
 }
 
