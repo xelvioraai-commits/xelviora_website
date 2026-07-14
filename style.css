@@ -1407,21 +1407,7 @@ color:#64748B;
 }
 #xel-message{
 
-    position:fixed;
-
-    left:0;
-
-    top:0;
-
-    opacity:0;
-
-    transform:translate(-50%,-50%) scale(.8);
-
-    transform-origin:left bottom;
-
-    pointer-events:none;
-
-    z-index:999998;
+    display:none;
 
 }
 
