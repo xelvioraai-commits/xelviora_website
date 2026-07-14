@@ -266,9 +266,13 @@ grid-template-columns:1fr;
 
 .review-btn{
 
-    width:100%;
+    width:320px;
 
-    height:70px;
+    height:60px;
+
+    margin:0 auto 30px auto;
+
+    display:block;
 
     background:#111827;
 
@@ -278,7 +282,7 @@ grid-template-columns:1fr;
 
     color:white;
 
-    font-size:22px;
+    font-size:18px;
 
     font-weight:700;
 
@@ -290,8 +294,8 @@ grid-template-columns:1fr;
 
 .review-btn:hover{
 
-    border-color:#2563EB;
-
     background:#172033;
+
+    border-color:#2563EB;
 
 }
