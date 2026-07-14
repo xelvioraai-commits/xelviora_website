@@ -1736,7 +1736,8 @@ color:#64748B;
 ========================================== */
 
 @media (max-width:768px){
-   .menu-toggle{
+
+    .menu-toggle{
 
         display:block;
 
@@ -1749,10 +1750,6 @@ color:#64748B;
     }
 
     .workspace-btn{
-
-        display:none;
-
-    .nav-links{
 
         display:none;
 
