@@ -1,1 +1,207 @@
+/* ==========================================
+   REGISTRATION WIZARD
+========================================== */
+
+.register-page{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(37,99,235,.12),
+    transparent 35%),
+    radial-gradient(circle at bottom right,
+    rgba(56,189,248,.10),
+    transparent 35%),
+    #050816;
+
+}
+
+.register-card{
+
+    width:100%;
+    max-width:720px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:50px;
+
+}
+
+.step-indicator{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+.step{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#1E293B;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:700;
+
+    flex-shrink:0;
+
+}
+
+.step.active{
+
+    background:#2563EB;
+
+}
+
+.line{
+
+    flex:1;
+
+    height:2px;
+
+    background:#334155;
+
+    margin:0 12px;
+
+}
+
+.register-card h1{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.register-card p{
+
+    text-align:center;
+
+    color:#94A3B8;
+
+    margin-bottom:35px;
+
+}
+
+.register-card form{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.register-card input,
+.register-card select{
+
+    width:100%;
+
+    padding:16px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+.register-card input:focus,
+.register-card select:focus{
+
+    outline:none;
+
+    border-color:#38BDF8;
+
+}
+
+.register-card button{
+
+    grid-column:1/-1;
+
+    padding:18px;
+
+    background:#2563EB;
+
+    border:none;
+
+    border-radius:14px;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.register-card button:hover{
+
+    background:#1D4ED8;
+
+}
+
+@media(max-width:768px){
+
+    .register-card{
+
+        padding:30px;
+
+    }
+
+    .register-card form{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+.register-card h1{
+
+font-size:34px;
+
+}
+
+}
 
