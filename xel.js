@@ -155,35 +155,36 @@ function showBubble(){
 ========================================== */
 
 const menuToggle = document.getElementById("menu-toggle");
-const closeMenu = document.getElementById("close-menu");
 const navLinks = document.getElementById("nav-links");
 
 if(menuToggle && navLinks){
 
     menuToggle.addEventListener("click",()=>{
 
-        navLinks.classList.add("active");
+        navLinks.classList.toggle("active");
+
+        if(navLinks.classList.contains("active")){
+
+            menuToggle.innerHTML="✕";
+
+        }else{
+
+            menuToggle.innerHTML="☰";
+
+        }
+
+    });
+
+    document.querySelectorAll("#nav-links a").forEach(link=>{
+
+        link.addEventListener("click",()=>{
+
+            navLinks.classList.remove("active");
+
+            menuToggle.innerHTML="☰";
+
+        });
 
     });
 
 }
-
-if(closeMenu && navLinks){
-
-    closeMenu.addEventListener("click",()=>{
-
-        navLinks.classList.remove("active");
-
-    });
-
-}
-
-document.querySelectorAll("#nav-links a").forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-        navLinks.classList.remove("active");
-
-    });
-
-});
