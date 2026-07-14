@@ -180,6 +180,8 @@ section{
 
         display:block;
 
+        z-index:10002;
+
     }
 
     .nav-actions{
@@ -206,11 +208,17 @@ section{
 
         flex-direction:column;
 
-        gap:28px;
+        align-items:flex-start;
 
-        padding:120px 40px;
+        justify-content:flex-start;
 
-        transition:right .35s;
+        padding:110px 35px;
+
+        gap:30px;
+
+        transition:right .35s ease;
+
+        z-index:10001;
 
     }
 
