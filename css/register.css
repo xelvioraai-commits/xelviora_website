@@ -315,3 +315,42 @@ grid-template-columns:1fr;
     border-color:#2563EB;
 
 }
+.upload-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.upload-box label{
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.upload-box input[type="file"]{
+
+    width:100%;
+
+    height:64px;
+
+    padding:18px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+    color:white;
+
+    cursor:pointer;
+
+}
