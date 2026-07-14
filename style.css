@@ -171,6 +171,11 @@ section{
     cursor:pointer;
 
 }
+.mobile-only{
+
+    display:none;
+
+}
 
 /* ================= MOBILE ================= */
 
@@ -227,6 +232,10 @@ section{
         right:0;
 
     }
+   .mobile-only{
+
+    display:block;
+   }
 
 }
 
