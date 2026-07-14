@@ -1,121 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Create Workspace | Xelviora</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-
 <div class="register-page">
 
-<div class="register-card">
+    <div class="register-card">
 
-<h1>XELVIORA</h1>
+        <div class="step-indicator">
 
-<h2>Create Your Workspace</h2>
+            <div class="step active">1</div>
+            <div class="line"></div>
 
-<p>
-Let's set up your organisation.
-</p>
+            <div class="step">2</div>
+            <div class="line"></div>
 
-<form>
+            <div class="step">3</div>
+            <div class="line"></div>
 
-<input type="text" placeholder="Company Name" required>
+            <div class="step">4</div>
 
-<input type="email" placeholder="Business Email" required>
+        </div>
 
-<select required>
+        <h1>Create Your Workspace</h1>
 
-<option value="">Select Country</option>
+        <p>
 
-<option>United Kingdom</option>
+            Step 1 of 4 — Company Details
 
-<option>India</option>
+        </p>
 
-<option>United States</option>
+        <form id="companyForm">
 
-<option>Australia</option>
+            <input
+                type="text"
+                placeholder="Company Name"
+                required>
 
-<option>Canada</option>
+            <input
+                type="email"
+                placeholder="Business Email"
+                required>
 
-</select>
+            <button type="submit">
 
-<select required>
+                Continue →
 
-<option value="">Industry</option>
+            </button>
 
-<option>Pharmaceutical</option>
+        </form>
 
-<option>Healthcare</option>
-
-<option>Manufacturing</option>
-
-<option>Finance</option>
-
-<option>Technology</option>
-
-<option>Retail</option>
-
-</select>
-
-<select required>
-
-<option value="">Company Size</option>
-
-<option>1 - 10 Employees</option>
-
-<option>11 - 50 Employees</option>
-
-<option>51 - 250 Employees</option>
-
-<option>251 - 1000 Employees</option>
-
-<option>1000+ Employees</option>
-
-</select>
-
-<input type="tel" placeholder="Phone Number">
-
-<input type="url" placeholder="Company Website (Optional)">
-
-<button type="submit">
-
-Continue →
-
-</button>
-
-</form>
-
-<div class="login-link">
-
-Already have a workspace?
-
-<a href="login.html">
-
-Launch Workspace
-
-</a>
+    </div>
 
 </div>
-
-</div>
-
-</div>
-
-</body>
-
-</html>
