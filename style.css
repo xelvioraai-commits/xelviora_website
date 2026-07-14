@@ -1825,3 +1825,96 @@ color:#64748B;
     cursor:pointer;
 
 }
+/* ==========================================
+   MOBILE NAVBAR
+========================================== */
+
+@media (max-width:900px){
+
+    .menu-toggle{
+
+        display:block;
+
+        order:3;
+
+    }
+
+    .nav-links{
+
+        position:fixed;
+
+        top:0;
+
+        right:-100%;
+
+        width:280px;
+
+        height:100vh;
+
+        background:#08111F;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:flex-start;
+
+        align-items:flex-start;
+
+        gap:28px;
+
+        padding:120px 40px;
+
+        transition:.35s ease;
+
+        border-left:1px solid rgba(255,255,255,.08);
+
+        z-index:1001;
+
+    }
+
+    .nav-links.active{
+
+        right:0;
+
+    }
+
+    .nav-links a{
+
+        font-size:20px;
+
+    }
+
+    .nav-actions{
+
+        margin-left:auto;
+
+    }
+
+    .nav-btn{
+
+        display:none;
+
+    }
+
+    .workspace-btn{
+
+        display:none;
+
+    }
+
+    .logo{
+
+        font-size:28px;
+
+    }
+
+    .navbar{
+
+        padding:0 20px;
+
+        height:74px;
+
+    }
+
+}
