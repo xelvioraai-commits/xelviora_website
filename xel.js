@@ -155,14 +155,35 @@ function showBubble(){
 ========================================== */
 
 const menuToggle = document.getElementById("menu-toggle");
+const closeMenu = document.getElementById("close-menu");
 const navLinks = document.getElementById("nav-links");
 
 if(menuToggle && navLinks){
 
     menuToggle.addEventListener("click",()=>{
 
-        navLinks.classList.toggle("active");
+        navLinks.classList.add("active");
 
     });
 
 }
+
+if(closeMenu && navLinks){
+
+    closeMenu.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+    });
+
+}
+
+document.querySelectorAll("#nav-links a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
