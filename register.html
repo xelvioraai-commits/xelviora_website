@@ -1,3 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Workspace | Xelviora</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
 <div class="register-page">
 
     <div class="register-card">
@@ -5,12 +28,15 @@
         <div class="step-indicator">
 
             <div class="step active">1</div>
+
             <div class="line"></div>
 
             <div class="step">2</div>
+
             <div class="line"></div>
 
             <div class="step">3</div>
+
             <div class="line"></div>
 
             <div class="step">4</div>
@@ -19,89 +45,57 @@
 
         <h1>Create Your Workspace</h1>
 
-        <p>
-
-            Step 1 of 4 — Company Details
-
-        </p>
+        <p>Step 1 of 4 — Company Details</p>
 
         <form id="companyForm">
 
-    <input
-        type="text"
-        placeholder="Company Name"
-        required>
+            <input type="text" placeholder="Company Name" required>
 
-    <input
-        type="email"
-        placeholder="Business Email"
-        required>
+            <input type="email" placeholder="Business Email" required>
 
-    <select required>
+            <select required>
+                <option value="">Select Country</option>
+                <option>United Kingdom</option>
+                <option>India</option>
+                <option>United States</option>
+                <option>Australia</option>
+                <option>Canada</option>
+            </select>
 
-        <option value="">Select Country</option>
+            <select required>
+                <option value="">Select Industry</option>
+                <option>Pharmaceutical</option>
+                <option>Healthcare</option>
+                <option>Technology</option>
+                <option>Finance</option>
+                <option>Manufacturing</option>
+            </select>
 
-        <option>United Kingdom</option>
+            <select required>
+                <option value="">Company Size</option>
+                <option>1–10 Employees</option>
+                <option>11–50 Employees</option>
+                <option>51–250 Employees</option>
+                <option>251–1000 Employees</option>
+                <option>1000+ Employees</option>
+            </select>
 
-        <option>India</option>
+            <input type="tel" placeholder="Business Phone">
 
-        <option>United States</option>
+            <input type="url" placeholder="Company Website (Optional)">
 
-        <option>Australia</option>
+            <button type="submit">
 
-        <option>Canada</option>
+                Continue →
 
-    </select>
+            </button>
 
-    <select required>
+        </form>
 
-        <option value="">Select Industry</option>
-
-        <option>Pharmaceutical</option>
-
-        <option>Healthcare</option>
-
-        <option>Manufacturing</option>
-
-        <option>Finance</option>
-
-        <option>Technology</option>
-
-        <option>Retail</option>
-
-    </select>
-
-    <select required>
-
-        <option value="">Company Size</option>
-
-        <option>1-10 Employees</option>
-
-        <option>11-50 Employees</option>
-
-        <option>51-250 Employees</option>
-
-        <option>251-1000 Employees</option>
-
-        <option>1000+ Employees</option>
-
-    </select>
-
-    <input
-        type="tel"
-        placeholder="Business Phone">
-
-    <input
-        type="url"
-        placeholder="Company Website (Optional)">
-
-    <button type="submit">
-
-        Continue →
-
-    </button>
-
-</form>
     </div>
 
 </div>
+
+</body>
+
+</html>
