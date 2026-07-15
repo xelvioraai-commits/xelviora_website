@@ -366,26 +366,115 @@ const calendar=document.getElementById("calendar");
 
 const today=new Date();
 
-const month=today.toLocaleString("default",{month:"long"});
+renderCalendar(today.getMonth(),today.getFullYear());
 
-const year=today.getFullYear();
+function renderCalendar(month,year){
 
-const date=today.getDate();
+const months=[
+"JANUARY",
+"FEBRUARY",
+"MARCH",
+"APRIL",
+"MAY",
+"JUNE",
+"JULY",
+"AUGUST",
+"SEPTEMBER",
+"OCTOBER",
+"NOVEMBER",
+"DECEMBER"
+];
+
+const weekdays=["S","M","T","W","T","F","S"];
+
+const firstDay=new Date(year,month,1).getDay();
+
+const daysInMonth=new Date(year,month+1,0).getDate();
 
 calendar.innerHTML=`
 
-<div class="calendar-month">
+<div class="calendar-header">
 
-${month} ${year}
+<button id="prevMonth">‹</button>
+
+<h4>${months[month]} ${year}</h4>
+
+<button id="nextMonth">›</button>
 
 </div>
 
-<div class="calendar-date">
+<div class="calendar-weekdays">
 
-${date}
+${weekdays.map(day=>`<div>${day}</div>`).join("")}
+
+</div>
+
+<div class="calendar-grid"></div>
+
+`;
+
+const grid=calendar.querySelector(".calendar-grid");
+
+for(let i=0;i<firstDay;i++){
+
+grid.innerHTML+=`<div class="empty"></div>`;
+
+}
+
+for(let day=1;day<=daysInMonth;day++){
+
+const isToday=
+
+day===today.getDate() &&
+
+month===today.getMonth() &&
+
+year===today.getFullYear();
+
+grid.innerHTML+=`
+
+<div class="calendar-day ${isToday?"today":""}">
+
+${day}
 
 </div>
 
 `;
+
+}
+
+document.getElementById("prevMonth").onclick=()=>{
+
+month--;
+
+if(month<0){
+
+month=11;
+
+year--;
+
+}
+
+renderCalendar(month,year);
+
+};
+
+document.getElementById("nextMonth").onclick=()=>{
+
+month++;
+
+if(month>11){
+
+month=0;
+
+year++;
+
+}
+
+renderCalendar(month,year);
+
+};
+
+}
 
 }
