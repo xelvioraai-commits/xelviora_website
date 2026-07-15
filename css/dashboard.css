@@ -152,17 +152,11 @@ backdrop-filter:blur(20px);
 
 }
 
-.welcome h2{
+.top-title h2{
 
 font-size:30px;
 
-margin-bottom:5px;
-
-}
-
-.welcome p{
-
-color:#94A3B8;
+font-weight:700;
 
 }
 
@@ -341,15 +335,16 @@ PLANNER
 
 .planner{
 
-max-width:1300px;
+max-width:1450px;
 
 margin:auto;
 
-}
+padding-bottom:80px;
 
+}
 .planner-header{
 
-margin-bottom:35px;
+margin-bottom:55px;
 
 }
 
@@ -371,9 +366,9 @@ color:#94A3B8;
 
 .planner-search{
 
-margin-top:35px;
+margin-top:50px;
 
-margin-bottom:40px;
+margin-bottom:70px;
 
 }
 
@@ -395,11 +390,13 @@ background:#0D1526;
 
 border:1px solid rgba(255,255,255,.08);
 
-border-radius:18px;
+border-radius:22px;
 
 overflow:hidden;
 
 transition:.3s;
+
+height:90px;
 
 }
 
@@ -421,9 +418,9 @@ border:none;
 
 outline:none;
 
-padding:24px;
+padding:30px;
 
-font-size:18px;
+font-size:22px;
 
 color:white;
 
@@ -437,9 +434,9 @@ color:#64748B;
 
 .planner-ai button{
 
-width:70px;
+width:90px;
 
-height:70px;
+height:90px;
 
 background:#2563EB;
 
@@ -461,14 +458,3 @@ background:#1D4ED8;
 
 }
 
-.planner hr{
-
-border:none;
-
-height:1px;
-
-background:rgba(255,255,255,.08);
-
-margin-top:45px;
-
-}
