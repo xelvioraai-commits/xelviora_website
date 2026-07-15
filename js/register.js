@@ -14,8 +14,7 @@ currentStep++;
 
 if(currentStep>4){
 
-window.location.href="dashboard.html";
-
+window.location.href="workspace-setup.html";
 return;
 
 }
