@@ -20,7 +20,7 @@ setTimeout(() => {
 
 setTimeout(() => {
 
-    xel.src = "images/xel-throwing-confetti.png";
+    xel.src = "images/xel-throwing-confetti.jpeg";
 
     launchConfetti();
 
