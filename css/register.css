@@ -354,3 +354,52 @@ grid-template-columns:1fr;
     cursor:pointer;
 
 }
+.review-section{
+
+display:none;
+
+margin-top:35px;
+
+padding:30px;
+
+background:#111827;
+
+border-radius:16px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.review-section h3{
+
+margin-top:25px;
+
+margin-bottom:12px;
+
+color:#3B82F6;
+
+}
+
+.review-row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:10px 0;
+
+border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.review-row span:first-child{
+
+color:#94A3B8;
+
+}
+
+.review-row span:last-child{
+
+font-weight:600;
+
+}
