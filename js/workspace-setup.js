@@ -36,7 +36,7 @@ clearInterval(timer);
 
 setTimeout(()=>{
 
-window.location.href="dashboard.html";
+window.location.href="workspace-created.html";
 
 },1200);
 
