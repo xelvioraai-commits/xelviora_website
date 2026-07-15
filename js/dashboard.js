@@ -154,7 +154,7 @@ break;
 
 case "planner":
 
-loadModule("Xel Planner","📁");
+loadPlanner();
 
 break;
 
@@ -207,3 +207,62 @@ break;
 });
 
 loadHome();
+function loadPlanner(){
+
+content.innerHTML=`
+
+<div class="planner">
+
+<div class="planner-header">
+
+<div>
+
+<h1>
+
+📁 Xel Planner
+
+</h1>
+
+<p>
+
+Good Morning, Sumukh 👋
+
+</p>
+
+</div>
+
+</div>
+
+<div class="planner-search">
+
+<p>
+
+What would you like to plan today?
+
+</p>
+
+<div class="planner-ai">
+
+<input
+
+type="text"
+
+placeholder="Ask Xel to create a project...">
+
+<button>
+
+✨
+
+</button>
+
+</div>
+
+</div>
+
+<hr>
+
+</div>
+
+`;
+
+}
