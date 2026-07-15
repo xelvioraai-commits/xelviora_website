@@ -56,11 +56,17 @@
 
 <div class="step-content active" id="step1">
 
-    <input type="text" placeholder="Company Name" required>
+    <input
+type="text"
+id="companyName"
+placeholder="Company Name">
 
-    <input type="email" placeholder="Business Email" required>
+    <input
+type="email"
+id="businessEmail"
+placeholder="Business Email">
 
-    <select required>
+    <select id="country" required>
 
         <option value="">Select Country</option>
 
@@ -76,7 +82,7 @@
 
     </select>
 
-    <select required>
+    <select id="industry" required>
 
         <option value="">Select Industry</option>
 
@@ -92,7 +98,7 @@
 
     </select>
 
-    <select required>
+    <select id="companySize" required>
 
         <option value="">Company Size</option>
 
@@ -108,33 +114,53 @@
 
     </select>
 
-    <input type="tel" placeholder="Business Phone">
+    <input type="tel" 
+        id="phone"
+        placeholder="Business Phone">
 
-    <input type="url" placeholder="Company Website (Optional)">
+    <input type="url" 
+        id="website"
+        placeholder="Company Website (Optional)">
 
 </div>
 
 <div class="step-content" id="step2">
 
-    <input type="text" placeholder="Administrator Name">
+    <input type="text" 
+        id="adminName"
+        placeholder="Administrator Name">
 
-    <input type="text" placeholder="Job Title">
+    <input type="text" 
+        id="jobTitle"
+        placeholder="Job Title">
 
-    <input type="email" placeholder="Administrator Email">
+    <input type="email" 
+        id="adminEmail"
+        placeholder="Administrator Email">
 
-    <input type="password" placeholder="Password">
+    <input type="password" 
+        id="password"
+        placeholder="Password">
 
-    <input type="password" placeholder="Confirm Password">
+    <input type="password" 
+        id="confirmPassword"
+        placeholder="Confirm Password">
 
 </div>
 
 <div class="step-content" id="step3">
 
-    <input type="text" placeholder="Time Zone">
+    <input type="text" 
+        id="timezone"
+        placeholder="Time Zone">
 
-    <input type="text" placeholder="Currency">
+    <input type="text" 
+        id="currency"
+        placeholder="Currency">
 
-    <input type="text" placeholder="Language">
+    <input type="text" 
+        id="language"
+        placeholder="Language">
 
     <div class="upload-box">
 
@@ -156,11 +182,30 @@
 
     <button
         type="button"
-        class="review-btn">
+        class="review-btn"
+        id="reviewBtn">
 
         Review Your Details
 
     </button>
+
+    <div
+        id="reviewSection"
+        class="review-section">
+
+        <h3>Company Information</h3>
+
+        <div id="companyReview"></div>
+
+        <h3>Administrator</h3>
+
+        <div id="adminReview"></div>
+
+        <h3>Workspace</h3>
+
+        <div id="workspaceReview"></div>
+
+    </div>
 
 </div>
 
