@@ -358,3 +358,34 @@ Today's Meetings
 `;
 
 generateCalendar();
+}
+
+function generateCalendar(){
+
+const calendar=document.getElementById("calendar");
+
+const today=new Date();
+
+const month=today.toLocaleString("default",{month:"long"});
+
+const year=today.getFullYear();
+
+const date=today.getDate();
+
+calendar.innerHTML=`
+
+<div class="calendar-month">
+
+${month} ${year}
+
+</div>
+
+<div class="calendar-date">
+
+${date}
+
+</div>
+
+`;
+
+}
