@@ -215,11 +215,9 @@ content.innerHTML=`
 
 <div class="planner-header">
 
-<div>
-
 <h1>
 
-📁 Xel Planner
+🗂️ Xel Planner
 
 </h1>
 
@@ -228,8 +226,6 @@ content.innerHTML=`
 Good Morning, Sumukh 👋
 
 </p>
-
-</div>
 
 </div>
 
@@ -244,14 +240,12 @@ What would you like to plan today?
 <div class="planner-ai">
 
 <input
-
 type="text"
-
 placeholder="Ask Xel to create a project...">
 
 <button>
 
-✨
+🤖
 
 </button>
 
@@ -259,10 +253,108 @@ placeholder="Ask Xel to create a project...">
 
 </div>
 
-<hr>
+<div class="planner-grid">
+
+<div class="calendar-card">
+
+<h3>
+
+Calendar
+
+</h3>
+
+<div id="calendar"></div>
+
+</div>
+
+<div class="tasks-card">
+
+<h3>
+
+Today's Tasks
+
+</h3>
+
+<div class="task-list">
+
+<div class="task">
+
+<input type="checkbox">
+
+<span>Landing Page Design</span>
+
+</div>
+
+<div class="task">
+
+<input type="checkbox">
+
+<span>Review Registration Flow</span>
+
+</div>
+
+<div class="task">
+
+<input type="checkbox">
+
+<span>Prepare Client Proposal</span>
+
+</div>
+
+<div class="task">
+
+<input type="checkbox">
+
+<span>Create Dashboard UI</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="meeting-card">
+
+<h3>
+
+Today's Meetings
+
+</h3>
+
+<div class="meeting-list">
+
+<div class="meeting">
+
+<strong>10:00 AM</strong>
+
+<p>Marketing Team</p>
+
+</div>
+
+<div class="meeting">
+
+<strong>2:30 PM</strong>
+
+<p>Client Call</p>
+
+</div>
+
+<div class="meeting">
+
+<strong>5:00 PM</strong>
+
+<p>Development Review</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 `;
 
-}
+generateCalendar();
