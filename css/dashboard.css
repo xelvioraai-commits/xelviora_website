@@ -486,6 +486,10 @@ padding:28px;
 
 min-height:430px;
 
+overflow:visible;
+
+position:relative;
+
 }
 
 .calendar-card h3,
@@ -506,9 +510,7 @@ flex-direction:column;
 
 gap:20px;
 
-max-height:320px;
-
-overflow:auto;
+overflow:visible;
 
 }
 
@@ -1025,6 +1027,8 @@ font-weight:700;
 .task-menu{
 
 position:relative;
+
+overflow:visible;
 
 }
 
