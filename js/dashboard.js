@@ -480,19 +480,19 @@ const days=document.querySelectorAll(".calendar-day");
 
 days.forEach(day=>{
 
-day.addEventListener("click",(e)=>{
+    day.addEventListener("click",(e)=>{
 
-showCalendarMenu(
+        showCalendarMenu(
+            e.target,
+            e.target.dataset.day
+        );
 
-e.target,
+    });
 
-e.target.dataset.day
-
-);
+});
 
 }
 
-}
 function showCalendarMenu(element,day){
 
 const old=document.querySelector(".calendar-menu");
