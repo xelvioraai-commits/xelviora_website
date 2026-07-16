@@ -658,29 +658,54 @@ tasks.forEach((task,index)=>{
 
 list.innerHTML+=`
 
-<div class="task">
+<div class="task ${task.completed?"completed":""}">
 
-<div style="flex:1;">
+<label class="task-checkbox">
+
+<input
+type="checkbox"
+${task.completed?"checked":""}
+onchange="toggleTask(${index})">
+
+<span></span>
+
+</label>
+
+<div class="task-info">
 
 <strong>${task.name}</strong>
 
-<p style="color:#94A3B8;font-size:14px;margin-top:6px;">
-
-${task.department}
-
-</p>
+<p>${task.department}</p>
 
 </div>
 
-<button
+<div class="task-menu">
 
-class="delete-task"
+<button onclick="toggleMenu(${index})">
 
-onclick="deleteTask(${index})">
-
-🗑️
+⋮
 
 </button>
+
+<div
+id="menu-${index}"
+class="task-dropdown">
+
+<div onclick="editTask(${index})">
+
+✏️ Edit
+
+</div>
+
+<div onclick="deleteTask(${index})">
+
+🗑 Delete
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -689,10 +714,33 @@ onclick="deleteTask(${index})">
 });
 
 }
+
 function deleteTask(index){
 
 tasks.splice(index,1);
 
 renderTasks();
+
+}
+
+function toggleTask(index){
+
+tasks[index].completed=!tasks[index].completed;
+
+renderTasks();
+
+}
+
+function toggleMenu(index){
+
+document
+.getElementById("menu-"+index)
+.classList.toggle("show");
+
+}
+
+function editTask(index){
+
+alert("Edit popup coming next.");
 
 }
