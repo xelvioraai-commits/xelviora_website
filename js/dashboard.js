@@ -303,6 +303,7 @@ Today's Meetings
 `;
 
 generateCalendar();
+renderTasks();
 }
 
 function generateCalendar(){
@@ -597,6 +598,41 @@ Create Task
 `;
 
 document.body.appendChild(modal);
+    const createBtn=modal.querySelector(".create-btn");
+
+createBtn.onclick=()=>{
+
+const inputs=modal.querySelectorAll("input");
+
+const textarea=modal.querySelector("textarea");
+
+const selects=modal.querySelectorAll("select");
+
+const task={
+
+name:inputs[0].value,
+
+description:textarea.value,
+
+startDate:inputs[1].value,
+
+dueDate:inputs[2].value,
+
+department:selects[0].value,
+
+owner:selects[1].value,
+
+members:[...selects[2].selectedOptions].map(x=>x.value)
+
+};
+
+tasks.push(task);
+
+renderTasks();
+
+modal.remove();
+
+};
 
 modal.querySelector(".cancel-btn").onclick=()=>{
 
@@ -608,5 +644,55 @@ modal.remove();
 function showMeetingModal(day){
 
 alert("Meeting popup coming next.");
+
+}
+function renderTasks(){
+
+const list=document.getElementById("taskList");
+
+if(!list) return;
+
+list.innerHTML="";
+
+tasks.forEach((task,index)=>{
+
+list.innerHTML+=`
+
+<div class="task">
+
+<div style="flex:1;">
+
+<strong>${task.name}</strong>
+
+<p style="color:#94A3B8;font-size:14px;margin-top:6px;">
+
+${task.department}
+
+</p>
+
+</div>
+
+<button
+
+class="delete-task"
+
+onclick="deleteTask(${index})">
+
+🗑️
+
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+function deleteTask(index){
+
+tasks.splice(index,1);
+
+renderTasks();
 
 }
