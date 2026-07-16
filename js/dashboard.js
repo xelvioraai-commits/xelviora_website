@@ -275,42 +275,9 @@ Today's Tasks
 
 </h3>
 
-<div class="task-list">
-
-<div class="task">
-
-<input type="checkbox">
-
-<span>Landing Page Design</span>
+<div class="task-list" id="taskList">
 
 </div>
-
-<div class="task">
-
-<input type="checkbox">
-
-<span>Review Registration Flow</span>
-
-</div>
-
-<div class="task">
-
-<input type="checkbox">
-
-<span>Prepare Client Proposal</span>
-
-</div>
-
-<div class="task">
-
-<input type="checkbox">
-
-<span>Create Dashboard UI</span>
-
-</div>
-
-</div>
-
 </div>
 
 <div class="meeting-card">
@@ -321,34 +288,9 @@ Today's Meetings
 
 </h3>
 
-<div class="meeting-list">
-
-<div class="meeting">
-
-<strong>10:00 AM</strong>
-
-<p>Marketing Team</p>
+<div class="meeting-list" id="meetingList">
 
 </div>
-
-<div class="meeting">
-
-<strong>2:30 PM</strong>
-
-<p>Client Call</p>
-
-</div>
-
-<div class="meeting">
-
-<strong>5:00 PM</strong>
-
-<p>Development Review</p>
-
-</div>
-
-</div>
-
 </div>
 
 </div>
