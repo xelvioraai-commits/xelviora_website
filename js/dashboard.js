@@ -491,7 +491,9 @@ days.forEach(day=>{
 
 });
 
-}
+} // closes renderCalendar()
+
+} // closes generateCalendar()
 
 function showCalendarMenu(element,day){
 
@@ -510,15 +512,11 @@ menu.className="calendar-menu";
 menu.innerHTML=`
 
 <button id="addTaskBtn">
-
 ＋ Add Task
-
 </button>
 
 <button id="addMeetingBtn">
-
 ＋ Add Meeting
-
 </button>
 
 `;
@@ -528,7 +526,6 @@ document.body.appendChild(menu);
 const rect=element.getBoundingClientRect();
 
 menu.style.left=rect.left+"px";
-
 menu.style.top=(rect.bottom+8)+"px";
 
 document.addEventListener("click",closeMenu);
@@ -536,14 +533,11 @@ document.addEventListener("click",closeMenu);
 function closeMenu(e){
 
 if(!menu.contains(e.target) &&
-
 !element.contains(e.target)){
 
 menu.remove();
 
 document.removeEventListener("click",closeMenu);
-
-}
 
 }
 
