@@ -232,23 +232,25 @@ Good Morning, Sumukh 👋
 
 </div>
 
-<div class="planner-search">
+<div class="xel-command">
 
-<p>
-
-What would you like to plan today?
-
-</p>
-
-<div class="planner-ai">
-
-<input
-type="text"
-placeholder="Ask Xel to create a project...">
-
-<button>
+<div class="xel-avatar">
 
 🤖
+
+</div>
+
+<div class="xel-input">
+
+<input
+id="xelCommand"
+type="text"
+placeholder="What would you like me to do today?">
+
+<button
+id="xelSend">
+
+➜
 
 </button>
 
@@ -304,6 +306,7 @@ Today's Meetings
 
 generateCalendar();
 renderTasks();
+setupXel();
 }
 
 function generateCalendar(){
@@ -759,5 +762,104 @@ if(confirm("Are you sure you want to delete this task?")){
 deleteTask(index);
 
 }
+
+}
+function setupXel(){
+
+const input=document.getElementById("xelCommand");
+
+const send=document.getElementById("xelSend");
+
+send.onclick=processCommand;
+
+input.addEventListener("keydown",e=>{
+
+if(e.key==="Enter"){
+
+processCommand();
+
+}
+
+});
+
+}
+
+function processCommand(){
+
+const input=document.getElementById("xelCommand");
+
+const text=input.value.trim();
+
+if(text==="") return;
+
+parseCommand(text);
+
+input.value="";
+
+}
+
+function parseCommand(command){
+
+const lower=command.toLowerCase();
+
+const task={
+
+name:command,
+
+description:"",
+
+department:"General",
+
+owner:"",
+
+members:[],
+
+completed:false
+
+};
+
+if(lower.includes("hr"))
+
+task.department="HR";
+
+else if(lower.includes("finance"))
+
+task.department="Finance";
+
+else if(lower.includes("marketing"))
+
+task.department="Marketing";
+
+else if(lower.includes("sales"))
+
+task.department="Sales";
+
+else if(lower.includes("it"))
+
+task.department="IT";
+
+task.name=command
+
+.replace(/add/gi,"")
+
+.replace(/task/gi,"")
+
+.replace(/for/gi,"")
+
+.replace(/today/gi,"")
+
+.replace(/department/gi,"")
+
+.replace(/hr|finance|marketing|sales|it/gi,"")
+
+.trim();
+
+if(task.name==="")
+
+task.name="New Task";
+
+tasks.push(task);
+
+renderTasks();
 
 }
