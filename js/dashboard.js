@@ -512,20 +512,41 @@ menu.className="calendar-menu";
 menu.innerHTML=`
 
 <button id="addTaskBtn">
+
 ＋ Add Task
+
 </button>
 
 <button id="addMeetingBtn">
+
 ＋ Add Meeting
+
 </button>
 
 `;
 
 document.body.appendChild(menu);
 
+document.getElementById("addTaskBtn").onclick=()=>{
+
+menu.remove();
+
+showTaskModal(day);
+
+};
+
+document.getElementById("addMeetingBtn").onclick=()=>{
+
+menu.remove();
+
+showMeetingModal(day);
+
+};
+
 const rect=element.getBoundingClientRect();
 
 menu.style.left=rect.left+"px";
+
 menu.style.top=(rect.bottom+8)+"px";
 
 document.addEventListener("click",closeMenu);
@@ -542,5 +563,105 @@ document.removeEventListener("click",closeMenu);
 }
 
 }
+
+}
+function showTaskModal(day){
+
+const modal=document.createElement("div");
+
+modal.className="modal-overlay";
+
+modal.innerHTML=`
+
+<div class="task-modal">
+
+<h2>Add Task</h2>
+
+<div class="form-grid">
+
+<input
+type="text"
+placeholder="Task Name">
+
+<textarea
+placeholder="Task Description"></textarea>
+
+<input
+type="date"
+value="2026-07-${String(day).padStart(2,"0")}">
+
+<input
+type="date">
+
+<select>
+
+<option>Marketing</option>
+
+<option>Finance</option>
+
+<option>HR</option>
+
+<option>IT</option>
+
+<option>Sales</option>
+
+</select>
+
+<select>
+
+<option>Sarah Smith</option>
+
+<option>John Doe</option>
+
+<option>Priya Kumar</option>
+
+</select>
+
+<select multiple>
+
+<option>Sarah Smith</option>
+
+<option>John Doe</option>
+
+<option>Priya Kumar</option>
+
+<option>David Lee</option>
+
+</select>
+
+</div>
+
+<div class="modal-buttons">
+
+<button class="cancel-btn">
+
+Cancel
+
+</button>
+
+<button class="create-btn">
+
+Create Task
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+document.body.appendChild(modal);
+
+modal.querySelector(".cancel-btn").onclick=()=>{
+
+modal.remove();
+
+};
+
+}
+function showMeetingModal(day){
+
+alert("Meeting popup coming next.");
 
 }
