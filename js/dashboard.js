@@ -1,3 +1,6 @@
+let tasks=[];
+
+let meetings=[];
 const content = document.getElementById("content");
 
 const menuItems = document.querySelectorAll(".menu-item");
