@@ -681,27 +681,25 @@ onchange="toggleTask(${index})">
 
 <div class="task-menu">
 
-<button onclick="toggleMenu(${index})">
+<button class="menu-btn" onclick="toggleMenu(${index})">
 
 ⋮
 
 </button>
 
-<div
-id="menu-${index}"
-class="task-dropdown">
+<div id="menu-${index}" class="task-popup">
 
-<div onclick="editTask(${index})">
+<button onclick="editTask(${index})">
 
 ✏️ Edit
 
-</div>
+</button>
 
-<div onclick="deleteTask(${index})">
+<button onclick="confirmDelete(${index})">
 
 🗑 Delete
 
-</div>
+</button>
 
 </div>
 
@@ -733,14 +731,33 @@ renderTasks();
 
 function toggleMenu(index){
 
-document
-.getElementById("menu-"+index)
-.classList.toggle("show");
+document.querySelectorAll(".task-popup").forEach(menu=>{
+
+if(menu.id!="menu-"+index){
+
+menu.classList.remove("show");
+
+}
+
+});
+
+document.getElementById("menu-"+index).classList.toggle("show");
 
 }
 
 function editTask(index){
 
-alert("Edit popup coming next.");
+showTaskModal(index);
+
+document.getElementById("menu-"+index).classList.remove("show");
+
+}
+function confirmDelete(index){
+
+if(confirm("Are you sure you want to delete this task?")){
+
+deleteTask(index);
+
+}
 
 }
