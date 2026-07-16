@@ -433,7 +433,9 @@ year===today.getFullYear();
 
 grid.innerHTML+=`
 
-<div class="calendar-day ${isToday?"today":""}">
+<div
+class="calendar-day ${isToday?"today":""}"
+data-day="${day}">
 
 ${day}
 
@@ -474,6 +476,74 @@ year++;
 renderCalendar(month,year);
 
 };
+const days=document.querySelectorAll(".calendar-day");
+
+days.forEach(day=>{
+
+day.addEventListener("click",(e)=>{
+
+showCalendarMenu(
+
+e.target,
+
+e.target.dataset.day
+
+);
+
+}
+
+}
+function showCalendarMenu(element,day){
+
+const old=document.querySelector(".calendar-menu");
+
+if(old){
+
+old.remove();
+
+}
+
+const menu=document.createElement("div");
+
+menu.className="calendar-menu";
+
+menu.innerHTML=`
+
+<button id="addTaskBtn">
+
+＋ Add Task
+
+</button>
+
+<button id="addMeetingBtn">
+
+＋ Add Meeting
+
+</button>
+
+`;
+
+document.body.appendChild(menu);
+
+const rect=element.getBoundingClientRect();
+
+menu.style.left=rect.left+"px";
+
+menu.style.top=(rect.bottom+8)+"px";
+
+document.addEventListener("click",closeMenu);
+
+function closeMenu(e){
+
+if(!menu.contains(e.target) &&
+
+!element.contains(e.target)){
+
+menu.remove();
+
+document.removeEventListener("click",closeMenu);
+
+}
 
 }
 
