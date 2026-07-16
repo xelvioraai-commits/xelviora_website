@@ -364,51 +364,57 @@ color:#94A3B8;
 
 }
 
-.planner-search{
-
-margin-top:50px;
-
-margin-bottom:70px;
-
-}
-
-.planner-search p{
-
-font-size:22px;
-
-margin-bottom:18px;
-
-}
-
-.planner-ai{
+.xel-command{
 
 display:flex;
 
 align-items:center;
 
+gap:24px;
+
+margin:45px 0 55px;
+
+}
+
+.xel-avatar{
+
+width:72px;
+
+height:72px;
+
+border-radius:50%;
+
+background:#2563EB;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:34px;
+
+flex-shrink:0;
+
+}
+
+.xel-input{
+
+display:flex;
+
+flex:1;
+
 background:#0D1526;
 
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:22px;
+border-radius:20px;
 
 overflow:hidden;
 
-transition:.3s;
-
-height:90px;
+border:1px solid rgba(255,255,255,.08);
 
 }
 
-.planner-ai:focus-within{
-
-border-color:#2563EB;
-
-box-shadow:0 0 20px rgba(37,99,235,.2);
-
-}
-
-.planner-ai input{
+.xel-input input{
 
 flex:1;
 
@@ -418,33 +424,31 @@ border:none;
 
 outline:none;
 
-padding:30px;
+padding:28px;
 
-font-size:22px;
+font-size:20px;
 
 color:white;
 
 }
 
-.planner-ai input::placeholder{
+.xel-input input::placeholder{
 
 color:#64748B;
 
 }
 
-.planner-ai button{
+.xel-input button{
 
 width:90px;
 
-height:90px;
+border:none;
 
 background:#2563EB;
 
-border:none;
-
 color:white;
 
-font-size:26px;
+font-size:24px;
 
 cursor:pointer;
 
@@ -452,12 +456,11 @@ transition:.3s;
 
 }
 
-.planner-ai button:hover{
+.xel-input button:hover{
 
 background:#1D4ED8;
 
 }
-
 /*==========================================
 PLANNER GRID
 ==========================================*/
