@@ -800,6 +800,8 @@ const result=await askXel(text);
 
 console.log(result);
 
+}
+
 catch(error){
 
 console.error("XEL ERROR:", error);
