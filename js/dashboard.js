@@ -784,7 +784,7 @@ processCommand();
 
 }
 
-function processCommand(){
+async function processCommand(){
 
 const input=document.getElementById("xelCommand");
 
@@ -792,9 +792,21 @@ const text=input.value.trim();
 
 if(text==="") return;
 
-parseCommand(text);
-
 input.value="";
+
+try{
+
+const result=await askXel(text);
+
+console.log(result);
+
+}catch(error){
+
+console.error(error);
+
+alert("Xel could not connect to the AI.");
+
+}
 
 }
 
