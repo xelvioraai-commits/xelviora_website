@@ -802,6 +802,12 @@ const reply = result.choices[0].message.content;
 
 console.log(reply);
 
+const ai = JSON.parse(reply);
+
+if(ai.action==="createTask"){
+
+createTask(ai);
+
 }
 
 catch(error){
@@ -923,11 +929,17 @@ tasks.push({
 
 name:data.title,
 
-department:data.department,
+description:data.description || "",
 
-owner:data.owner,
+department:data.department || "General",
 
-dueDate:data.dueDate,
+owner:data.owner || "",
+
+members:data.members || [],
+
+startDate:data.startDate || "",
+
+dueDate:data.dueDate || "",
 
 completed:false
 
