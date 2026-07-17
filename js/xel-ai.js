@@ -4,7 +4,7 @@ const API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
 async function askXel(message){
 
-    const response = await fetch(OPENAI_URL,{
+    const response = await fetch(API_URL,{
         method:"POST",
 
         headers:{
