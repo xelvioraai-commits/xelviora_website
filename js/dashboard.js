@@ -800,11 +800,11 @@ const result=await askXel(text);
 
 console.log(result);
 
-}catch(error){
+catch(error){
 
-console.error(error);
+console.error("XEL ERROR:", error);
 
-alert("Xel could not connect to the AI.");
+alert(error.message);
 
 }
 
