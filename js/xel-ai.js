@@ -53,6 +53,10 @@ Do not explain.
 
     });
 
-    return await response.json();
+    const data = await response.json();
+
+console.log(data);
+
+return data;
 
 }
