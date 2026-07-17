@@ -800,65 +800,122 @@ input.value="";
 
 function parseCommand(command){
 
-const lower=command.toLowerCase();
+const text=command.toLowerCase();
 
 const task={
 
-name:command,
+action:"createTask",
 
-description:"",
+title:"",
 
 department:"General",
 
 owner:"",
 
-members:[],
+dueDate:"",
+
+priority:"Normal",
+
+description:"",
 
 completed:false
 
 };
 
-if(lower.includes("hr"))
+const departments=[
+"hr",
+"finance",
+"marketing",
+"sales",
+"it",
+"operations"
+];
 
-task.department="HR";
+departments.forEach(dep=>{
 
-else if(lower.includes("finance"))
+if(text.includes(dep)){
 
-task.department="Finance";
+task.department=dep.charAt(0).toUpperCase()+dep.slice(1);
 
-else if(lower.includes("marketing"))
+}
 
-task.department="Marketing";
+});
 
-else if(lower.includes("sales"))
+const owners=[
+"sarah",
+"john",
+"priya",
+"david"
+];
 
-task.department="Sales";
+owners.forEach(person=>{
 
-else if(lower.includes("it"))
+if(text.includes(person)){
 
-task.department="IT";
+task.owner=person.charAt(0).toUpperCase()+person.slice(1);
 
-task.name=command
+}
 
-.replace(/add/gi,"")
+});
 
-.replace(/task/gi,"")
+const due=text.match(/due\s+([a-zA-Z0-9]+)/);
 
-.replace(/for/gi,"")
+if(due){
 
-.replace(/today/gi,"")
+task.dueDate=due[1];
 
-.replace(/department/gi,"")
+}
 
-.replace(/hr|finance|marketing|sales|it/gi,"")
+let title=command;
 
-.trim();
+title=title.replace(/add/gi,"");
 
-if(task.name==="")
+title=title.replace(/task/gi,"");
 
-task.name="New Task";
+title=title.replace(/for the/gi,"");
 
-tasks.push(task);
+title=title.replace(/for/gi,"");
+
+title=title.replace(/department/gi,"");
+
+title=title.replace(/assign it to.*/gi,"");
+
+title=title.replace(/due.*/gi,"");
+
+departments.forEach(dep=>{
+
+const regex=new RegExp(dep,"gi");
+
+title=title.replace(regex,"");
+
+});
+
+task.title=title.trim();
+
+if(task.title===""){
+
+task.title="New Task";
+
+}
+
+createTask(task);
+
+}
+function createTask(data){
+
+tasks.push({
+
+name:data.title,
+
+department:data.department,
+
+owner:data.owner,
+
+dueDate:data.dueDate,
+
+completed:false
+
+});
 
 renderTasks();
 
