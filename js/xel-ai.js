@@ -1,6 +1,6 @@
-const OPENAI_API_KEY = "PASTE_YOUR_OPENAI_API_KEY_HERE";
+const API_KEY = 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
 
-const OPENAI_URL = "https://api.openai.com/v1/chat/completions";
+const API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
 async function askXel(message){
 
@@ -9,12 +9,12 @@ async function askXel(message){
 
         headers:{
             "Content-Type":"application/json",
-            "Authorization":"Bearer "+OPENAI_API_KEY
+            "Authorization":"Bearer "+API_KEY
         },
 
         body:JSON.stringify({
 
-            model:"gpt-4.1-mini",
+            model:"llama-3.3-70b-versatile",
 
             messages:[
 
