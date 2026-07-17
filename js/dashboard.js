@@ -798,7 +798,9 @@ try{
 
 const result=await askXel(text);
 
-console.log(result);
+const reply = result.choices[0].message.content;
+
+console.log(reply);
 
 }
 
