@@ -798,11 +798,11 @@ try{
 
 const result=await askXel(text);
 
-const reply = result.choices[0].message.content;
+const reply=result.choices[0].message.content;
 
 console.log(reply);
 
-const ai = JSON.parse(reply);
+const ai=JSON.parse(reply);
 
 if(ai.action==="createTask"){
 
@@ -810,16 +810,53 @@ createTask(ai);
 
 }
 
+}
+
 catch(error){
 
-console.error("XEL ERROR:", error);
+console.error("XEL ERROR:",error);
+
+alert(error.message);
+
+}
+
+}async function processCommand(){
+
+const input=document.getElementById("xelCommand");
+
+const text=input.value.trim();
+
+if(text==="") return;
+
+input.value="";
+
+try{
+
+const result=await askXel(text);
+
+const reply=result.choices[0].message.content;
+
+console.log(reply);
+
+const ai=JSON.parse(reply);
+
+if(ai.action==="createTask"){
+
+createTask(ai);
+
+}
+
+}
+
+catch(error){
+
+console.error("XEL ERROR:",error);
 
 alert(error.message);
 
 }
 
 }
-
 function parseCommand(command){
 
 const text=command.toLowerCase();
