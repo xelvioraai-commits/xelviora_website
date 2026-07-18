@@ -514,7 +514,13 @@ document.removeEventListener("click",closeMenu);
 }
 
 }
-function showTaskModal(day){
+function showTaskModal(options={}){
+
+const mode=options.mode || "create";
+
+const task=options.task || {};
+
+const day=options.day || "";
 
 const modal=document.createElement("div");
 
@@ -524,56 +530,53 @@ modal.innerHTML=`
 
 <div class="task-modal">
 
-<h2>Add Task</h2>
+<h2>${mode==="edit"?"Edit Task":"Add Task"}</h2>
 
 <div class="form-grid">
 
 <input
+id="taskName"
 type="text"
-placeholder="Task Name">
+placeholder="Task Name"
+value="${task.name || ""}">
 
 <textarea
-placeholder="Task Description"></textarea>
+id="taskDescription"
+placeholder="Task Description">${task.description || ""}</textarea>
 
 <input
+id="taskStart"
 type="date"
-value="2026-07-${String(day).padStart(2,"0")}">
+value="${task.startDate || (day?`2026-07-${String(day).padStart(2,"0")}`:"")}">
 
 <input
-type="date">
+id="taskDue"
+type="date"
+value="${task.dueDate || ""}">
 
-<select>
+<select id="taskDepartment">
 
-<option>Marketing</option>
-
-<option>Finance</option>
-
-<option>HR</option>
-
-<option>IT</option>
-
-<option>Sales</option>
+<option ${task.department==="Marketing"?"selected":""}>Marketing</option>
+<option ${task.department==="Finance"?"selected":""}>Finance</option>
+<option ${task.department==="HR"?"selected":""}>HR</option>
+<option ${task.department==="IT"?"selected":""}>IT</option>
+<option ${task.department==="Sales"?"selected":""}>Sales</option>
 
 </select>
 
-<select>
+<select id="taskOwner">
 
-<option>Sarah Smith</option>
-
-<option>John Doe</option>
-
-<option>Priya Kumar</option>
+<option ${task.owner==="Sarah Smith"?"selected":""}>Sarah Smith</option>
+<option ${task.owner==="John Doe"?"selected":""}>John Doe</option>
+<option ${task.owner==="Priya Kumar"?"selected":""}>Priya Kumar</option>
 
 </select>
 
-<select multiple>
+<select id="taskMembers" multiple>
 
 <option>Sarah Smith</option>
-
 <option>John Doe</option>
-
 <option>Priya Kumar</option>
-
 <option>David Lee</option>
 
 </select>
@@ -590,7 +593,7 @@ Cancel
 
 <button class="create-btn">
 
-Create Task
+${mode==="edit"?"Save Changes":"Create Task"}
 
 </button>
 
@@ -601,43 +604,46 @@ Create Task
 `;
 
 document.body.appendChild(modal);
-    const createBtn=modal.querySelector(".create-btn");
 
-createBtn.onclick=()=>{
-
-const inputs=modal.querySelectorAll("input");
-
-const textarea=modal.querySelector("textarea");
-
-const selects=modal.querySelectorAll("select");
-
-const task={
-
-name:inputs[0].value,
-
-description:textarea.value,
-
-startDate:inputs[1].value,
-
-dueDate:inputs[2].value,
-
-department:selects[0].value,
-
-owner:selects[1].value,
-
-members:[...selects[2].selectedOptions].map(x=>x.value)
-
-};
-
-tasks.push(task);
-
-renderTasks();
+modal.querySelector(".cancel-btn").onclick=()=>{
 
 modal.remove();
 
 };
 
-modal.querySelector(".cancel-btn").onclick=()=>{
+modal.querySelector(".create-btn").onclick=()=>{
+
+const updatedTask={
+
+name:document.getElementById("taskName").value,
+
+description:document.getElementById("taskDescription").value,
+
+startDate:document.getElementById("taskStart").value,
+
+dueDate:document.getElementById("taskDue").value,
+
+department:document.getElementById("taskDepartment").value,
+
+owner:document.getElementById("taskOwner").value,
+
+members:[...document.getElementById("taskMembers").selectedOptions].map(x=>x.value),
+
+completed:task.completed || false
+
+};
+
+if(mode==="edit"){
+
+tasks[options.index]=updatedTask;
+
+}else{
+
+tasks.push(updatedTask);
+
+}
+
+renderTasks();
 
 modal.remove();
 
@@ -785,42 +791,6 @@ processCommand();
 }
 
 async function processCommand(){
-
-const input=document.getElementById("xelCommand");
-
-const text=input.value.trim();
-
-if(text==="") return;
-
-input.value="";
-
-try{
-
-const result=await askXel(text);
-
-const reply=result.choices[0].message.content;
-
-console.log(reply);
-
-const ai=JSON.parse(reply);
-
-if(ai.action==="createTask"){
-
-createTask(ai);
-
-}
-
-}
-
-catch(error){
-
-console.error("XEL ERROR:",error);
-
-alert(error.message);
-
-}
-
-}async function processCommand(){
 
 const input=document.getElementById("xelCommand");
 
