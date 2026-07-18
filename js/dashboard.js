@@ -948,7 +948,7 @@ function createTask(data){
 
 tasks.push({
 
-name:data.title,
+name:data.name || data.title || "",
 
 description:data.description || "",
 
@@ -962,7 +962,7 @@ startDate:data.startDate || "",
 
 dueDate:data.dueDate || "",
 
-completed:false
+completed:data.completed || false
 
 });
 
