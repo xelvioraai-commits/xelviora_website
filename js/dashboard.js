@@ -1088,6 +1088,9 @@ else if(ai.action==="createMeeting"){
 createMeeting(ai);
 
 }
+
+}
+
 catch(error){
 
 console.error("XEL ERROR:",error);
