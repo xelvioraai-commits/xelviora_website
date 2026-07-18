@@ -555,12 +555,9 @@ flex-direction:column;
 
 gap:18px;
 
-max-height:320px;
-
-overflow:auto;
+overflow:visible;
 
 }
-
 .meeting{
 
 padding:18px;
