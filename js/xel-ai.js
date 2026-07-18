@@ -54,7 +54,9 @@ Rules:
   Sales
   IT
 
-- startDate and dueDate MUST be in YYYY-MM-DD format.
+- Assume today's year is 2026.
+- startDate and dueDate MUST be in YYYY-MM-DD format using the year 2026.
+- If the user says "today", "tomorrow", "Friday", "next Friday", etc., convert it into an actual 2026 date.
 
 - description must never be empty.
 
