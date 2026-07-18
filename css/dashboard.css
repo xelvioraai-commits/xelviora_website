@@ -465,15 +465,65 @@ background:#1D4ED8;
 PLANNER GRID
 ==========================================*/
 
-.planner-grid{
+.planner-layout{
 
-display:grid;
+display:flex;
 
-grid-template-columns:1.4fr 1fr 1fr;
+flex-direction:column;
 
 gap:30px;
 
 margin-top:60px;
+
+}
+
+.planner-top{
+
+display:grid;
+
+grid-template-columns:1.5fr 1fr;
+
+gap:30px;
+
+}
+
+.planner-bottom{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}.planner-layout{
+
+display:flex;
+
+flex-direction:column;
+
+gap:30px;
+
+margin-top:60px;
+
+}
+
+.planner-top{
+
+display:grid;
+
+grid-template-columns:1.5fr 1fr;
+
+gap:30px;
+
+}
+
+.planner-bottom{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
 
 }
 
