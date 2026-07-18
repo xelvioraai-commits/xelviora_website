@@ -296,6 +296,37 @@ Today's Meetings
 <div class="meeting-list" id="meetingList">
 
 </div>
+
+</div>
+
+<div class="team-card">
+
+<h3>
+
+👥 IT Team
+
+</h3>
+
+<div id="teamMembers">
+
+</div>
+
+<div class="xel-insights">
+
+<h4>
+
+🤖 Xel Insights
+
+</h4>
+
+<div id="xelInsights">
+
+Loading...
+
+</div>
+
+</div>
+
 </div>
 
 </div>
