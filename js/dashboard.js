@@ -1083,8 +1083,11 @@ createTask(ai);
 
 }
 
-}
+else if(ai.action==="createMeeting"){
 
+createMeeting(ai);
+
+}
 catch(error){
 
 console.error("XEL ERROR:",error);
@@ -1220,5 +1223,32 @@ completed:data.completed || false
 });
 
 renderTasks();
+
+}
+function createMeeting(data){
+
+meetings.push({
+
+title:data.title || "",
+
+description:data.description || "",
+
+department:data.department || "General",
+
+organizer:data.organizer || "",
+
+members:data.members || [],
+
+date:data.date || "",
+
+startTime:data.startTime || "",
+
+endTime:data.endTime || "",
+
+location:data.location || ""
+
+});
+
+renderMeetings();
 
 }
