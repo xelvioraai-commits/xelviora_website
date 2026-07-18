@@ -656,9 +656,153 @@ modal.remove();
 };
 
 }
-function showMeetingModal(day){
+function showMeetingModal(options={}){
 
-alert("Meeting popup coming next.");
+const mode=options.mode || "create";
+
+const meeting=options.meeting || {};
+
+const day=options.day || "";
+
+const modal=document.createElement("div");
+
+modal.className="modal-overlay";
+
+modal.innerHTML=`
+
+<div class="task-modal">
+
+<h2>${mode==="edit"?"Edit Meeting":"Add Meeting"}</h2>
+
+<div class="form-grid">
+
+<input
+id="meetingTitle"
+type="text"
+placeholder="Meeting Title"
+value="${meeting.title || ""}">
+
+<textarea
+id="meetingDescription"
+placeholder="Meeting Agenda">${meeting.description || ""}</textarea>
+
+<input
+id="meetingDate"
+type="date"
+value="${meeting.date || (day?`2026-07-${String(day).padStart(2,"0")}`:"")}">
+
+<input
+id="meetingStart"
+type="time"
+value="${meeting.startTime || ""}">
+
+<input
+id="meetingEnd"
+type="time"
+value="${meeting.endTime || ""}">
+
+<select id="meetingDepartment">
+
+<option ${meeting.department==="Marketing"?"selected":""}>Marketing</option>
+<option ${meeting.department==="Finance"?"selected":""}>Finance</option>
+<option ${meeting.department==="HR"?"selected":""}>HR</option>
+<option ${meeting.department==="IT"?"selected":""}>IT</option>
+<option ${meeting.department==="Sales"?"selected":""}>Sales</option>
+
+</select>
+
+<select id="meetingOrganizer">
+
+<option ${meeting.organizer==="Sarah Smith"?"selected":""}>Sarah Smith</option>
+<option ${meeting.organizer==="John Doe"?"selected":""}>John Doe</option>
+<option ${meeting.organizer==="Priya Kumar"?"selected":""}>Priya Kumar</option>
+
+</select>
+
+<select id="meetingMembers" multiple>
+
+<option>Sarah Smith</option>
+<option>John Doe</option>
+<option>Priya Kumar</option>
+<option>David Lee</option>
+
+</select>
+
+<input
+id="meetingLocation"
+type="text"
+placeholder="Meeting Link or Location"
+value="${meeting.location || ""}">
+
+</div>
+
+<div class="modal-buttons">
+
+<button class="cancel-btn">
+
+Cancel
+
+</button>
+
+<button class="create-btn">
+
+${mode==="edit"?"Save Changes":"Create Meeting"}
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+document.body.appendChild(modal);
+
+modal.querySelector(".cancel-btn").onclick=()=>{
+
+modal.remove();
+
+};
+
+modal.querySelector(".create-btn").onclick=()=>{
+
+const data={
+
+title:document.getElementById("meetingTitle").value,
+
+description:document.getElementById("meetingDescription").value,
+
+date:document.getElementById("meetingDate").value,
+
+startTime:document.getElementById("meetingStart").value,
+
+endTime:document.getElementById("meetingEnd").value,
+
+department:document.getElementById("meetingDepartment").value,
+
+organizer:document.getElementById("meetingOrganizer").value,
+
+members:[...document.getElementById("meetingMembers").selectedOptions].map(x=>x.value),
+
+location:document.getElementById("meetingLocation").value
+
+};
+
+if(mode==="edit"){
+
+meetings[options.index]=data;
+
+}else{
+
+meetings.push(data);
+
+}
+
+renderMeetings();
+
+modal.remove();
+
+};
 
 }
 function renderTasks(){
