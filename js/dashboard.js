@@ -258,7 +258,9 @@ id="xelSend">
 
 </div>
 
-<div class="planner-grid">
+<div class="planner-layout">
+
+<div class="planner-top">
 
 <div class="calendar-card">
 
@@ -269,33 +271,6 @@ Calendar
 </h3>
 
 <div id="calendar"></div>
-
-</div>
-
-<div class="tasks-card">
-
-<h3>
-
-Today's Tasks
-
-</h3>
-
-<div class="task-list" id="taskList">
-
-</div>
-</div>
-
-<div class="meeting-card">
-
-<h3>
-
-Today's Meetings
-
-</h3>
-
-<div class="meeting-list" id="meetingList">
-
-</div>
 
 </div>
 
@@ -315,13 +290,47 @@ Today's Meetings
 
 <h4>
 
-🤖 Xel Insights
+Xel Insights
 
 </h4>
 
 <div id="xelInsights">
 
 Loading...
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="planner-bottom">
+
+<div class="tasks-card">
+
+<h3>
+
+Today's Tasks
+
+</h3>
+
+<div class="task-list" id="taskList">
+
+</div>
+
+</div>
+
+<div class="meeting-card">
+
+<h3>
+
+Today's Meetings
+
+</h3>
+
+<div class="meeting-list" id="meetingList">
 
 </div>
 
