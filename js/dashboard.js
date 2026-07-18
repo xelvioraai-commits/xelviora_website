@@ -306,6 +306,7 @@ Today's Meetings
 
 generateCalendar();
 renderTasks();
+renderMeetings();
 setupXel();
 }
 
@@ -871,6 +872,73 @@ onchange="toggleTask(${index})">
 });
 
 }
+function renderMeetings(){
+
+const list=document.getElementById("meetingList");
+
+if(!list) return;
+
+list.innerHTML="";
+
+meetings.forEach((meeting,index)=>{
+
+list.innerHTML+=`
+
+<div class="task">
+
+<div class="task-info">
+
+<strong>${meeting.title}</strong>
+
+<p>${meeting.department}</p>
+
+<small>${meeting.startTime} - ${meeting.endTime}</small>
+
+</div>
+
+<div class="task-menu">
+
+<button class="menu-btn"
+
+onclick="toggleMeetingMenu(${index})">
+
+⋮
+
+</button>
+
+<div
+
+id="meeting-menu-${index}"
+
+class="task-popup">
+
+<button
+
+onclick="editMeeting(${index})">
+
+✏️ Edit
+
+</button>
+
+<button
+
+onclick="deleteMeeting(${index})">
+
+🗑 Delete
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
 
 function deleteTask(index){
 
@@ -903,6 +971,21 @@ menu.classList.remove("show");
 document.getElementById("menu-"+index).classList.toggle("show");
 
 }
+function toggleMeetingMenu(index){
+
+document.querySelectorAll(".task-popup").forEach(menu=>{
+
+if(menu.id!="meeting-menu-"+index){
+
+menu.classList.remove("show");
+
+}
+
+});
+
+document.getElementById("meeting-menu-"+index).classList.toggle("show");
+
+}
 
 function editTask(index){
 
@@ -919,11 +1002,37 @@ index:index
 document.getElementById("menu-"+index).classList.remove("show");
 
 }
+function editMeeting(index){
+
+showMeetingModal({
+
+mode:"edit",
+
+meeting:meetings[index],
+
+index:index
+
+});
+
+document.getElementById("meeting-menu-"+index).classList.remove("show");
+
+}
 function confirmDelete(index){
 
 if(confirm("Are you sure you want to delete this task?")){
 
 deleteTask(index);
+
+}
+
+}
+function deleteMeeting(index){
+
+if(confirm("Delete this meeting?")){
+
+meetings.splice(index,1);
+
+renderMeetings();
 
 }
 
