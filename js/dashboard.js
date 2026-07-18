@@ -480,9 +480,13 @@ document.getElementById("addTaskBtn").onclick=()=>{
 
 menu.remove();
 
-showTaskModal(day);
+showTaskModal({
 
-};
+mode:"create",
+
+day:day
+
+});
 
 document.getElementById("addMeetingBtn").onclick=()=>{
 
@@ -756,7 +760,15 @@ document.getElementById("menu-"+index).classList.toggle("show");
 
 function editTask(index){
 
-showTaskModal(index);
+showTaskModal({
+
+mode:"edit",
+
+task:tasks[index],
+
+index:index
+
+});
 
 document.getElementById("menu-"+index).classList.remove("show");
 
