@@ -488,6 +488,8 @@ day:day
 
 });
 
+};
+
 document.getElementById("addMeetingBtn").onclick=()=>{
 
 menu.remove();
