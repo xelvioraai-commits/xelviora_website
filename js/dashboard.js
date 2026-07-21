@@ -1,6 +1,44 @@
 let tasks=[];
 
 let meetings=[];
+const team=[
+
+{
+    initials:"SS",
+    name:"Sumukh Santosh",
+    role:"Senior Business Analyst",
+    department:"IT"
+},
+
+{
+    initials:"PK",
+    name:"Priya Kumar",
+    role:"Business Analyst",
+    department:"IT"
+},
+
+{
+    initials:"JD",
+    name:"John Doe",
+    role:"Project Manager",
+    department:"IT"
+},
+
+{
+    initials:"DL",
+    name:"David Lee",
+    role:"Software Engineer",
+    department:"IT"
+},
+
+{
+    initials:"CB",
+    name:"Chaitra B",
+    role:"UI/UX Designer",
+    department:"IT"
+}
+
+];
 const content = document.getElementById("content");
 
 const menuItems = document.querySelectorAll(".menu-item");
@@ -345,10 +383,14 @@ Today's Meetings
 `;
 
 generateCalendar();
+
 renderTasks();
+
 renderMeetings();
+
+renderTeam();
+
 setupXel();
-}
 
 function generateCalendar(){
 
@@ -1295,5 +1337,66 @@ location:data.location || ""
 });
 
 renderMeetings();
+
+}
+function renderTeam(){
+
+const container=document.getElementById("teamMembers");
+
+if(!container) return;
+
+container.innerHTML="";
+
+container.className="team-members";
+
+team.forEach(person=>{
+
+const taskCount=tasks.filter(t=>t.owner===person.name).length;
+
+const meetingCount=meetings.filter(m=>m.organizer===person.name).length;
+
+const workload=Math.min((taskCount*20)+(meetingCount*10),100);
+
+container.innerHTML+=`
+
+<div class="member">
+
+<div class="member-tooltip">
+
+<h4>${person.name}</h4>
+
+<p>${person.department} Department</p>
+
+<p>${person.role}</p>
+
+</div>
+
+<div class="member-initial">
+
+${person.initials}
+
+</div>
+
+<div class="workload">
+
+<div
+class="workload-fill"
+style="width:${workload}%">
+
+</div>
+
+</div>
+
+<div class="member-stats">
+
+${taskCount}T • ${meetingCount}M
+
+</div>
+
+</div>
+
+`;
+
+});
 
 }
