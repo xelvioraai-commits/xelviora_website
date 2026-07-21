@@ -121,7 +121,8 @@ Do not explain.
 
     const data = await response.json();
 
-console.log(data);
+console.log("Status:", response.status);
+console.log("Response:", data);
 
 return data;
 
