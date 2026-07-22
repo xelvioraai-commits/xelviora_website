@@ -391,6 +391,13 @@ renderMeetings();
 renderTeam();
 
 setupXel();
+window.toggleMenu = toggleMenu;
+window.toggleMeetingMenu = toggleMeetingMenu;
+window.editTask = editTask;
+window.editMeeting = editMeeting;
+window.confirmDelete = confirmDelete;
+window.deleteMeeting = deleteMeeting;
+window.toggleTask = toggleTask;
 
 function generateCalendar(){
 
