@@ -1366,3 +1366,151 @@ color:#94A3B8;
 line-height:1.7;
 
 }
+/* ===========================================
+   MOBILE RESPONSIVE - XEL PLANNER
+=========================================== */
+
+@media (max-width:768px){
+
+#content{
+
+padding:20px;
+
+}
+
+/* Planner */
+
+.planner{
+
+width:100%;
+
+padding-bottom:40px;
+
+}
+
+/* Header */
+
+.planner-header h1{
+
+font-size:34px;
+
+}
+
+.planner-header p{
+
+font-size:18px;
+
+}
+
+/* AI Command */
+
+.xel-command{
+
+flex-direction:column;
+
+align-items:stretch;
+
+gap:18px;
+
+}
+
+.xel-avatar{
+
+margin:auto;
+
+}
+
+.xel-input{
+
+width:100%;
+
+}
+
+.xel-input input{
+
+font-size:18px;
+
+padding:20px;
+
+}
+
+.xel-input button{
+
+width:70px;
+
+}
+
+/* Layout */
+
+.planner-top{
+
+grid-template-columns:1fr;
+
+}
+
+.planner-bottom{
+
+grid-template-columns:1fr;
+
+}
+
+/* Cards */
+
+.calendar-card,
+.team-card,
+.tasks-card,
+.meeting-card{
+
+min-height:auto;
+
+padding:20px;
+
+}
+
+/* Team */
+
+.team-members{
+
+display:flex;
+
+overflow-x:auto;
+
+flex-wrap:nowrap;
+
+gap:15px;
+
+padding-bottom:10px;
+
+}
+
+.team-members::-webkit-scrollbar{
+
+display:none;
+
+}
+
+.member{
+
+min-width:95px;
+
+flex:0 0 95px;
+
+}
+
+/* Calendar */
+
+.calendar-grid{
+
+gap:6px;
+
+}
+
+.calendar-day{
+
+height:38px;
+
+font-size:16px;
+
+}
+
+}
